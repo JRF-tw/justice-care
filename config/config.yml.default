@@ -1,0 +1,25 @@
+defaults: &defaults
+  google_auth_key:
+    client_id: ''
+    client_secret: ''
+
+  facebook_auth_key:
+    app_id: ""
+    app_secret: ""
+
+  google_gtm: 
+    id: ""
+
+  url:
+    host: "localhost:3000"
+    protocol: "http"
+    fb: ""
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
