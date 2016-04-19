@@ -17,9 +17,9 @@
         tr
           td = user.email
           td
-            - if user.provider = 'google_oauth2'
+            - if user.provider == 'google_oauth2'
               i.fa.fa-google
-            - elsif user.provider = 'facebook'
+            - elsif user.provider == 'facebook'
               i.fa.fa-facebook
           td
             - if user.admin?
