@@ -12,7 +12,7 @@
     p.text-center
       = image_tag('title.png', class: 'img-responsive center-block')
     .row.text-center
-      - if params[:controller] == 'step1'
+      - if params[:action] == 'step1'
         = link_to step1_path, class: 'btn btn-step action' do
           | 第一階段
           br
@@ -22,7 +22,7 @@
           | 第一階段
           br
           | 健康檢查
-      - if params[:controller] == 'step2'
+      - if params[:action] == 'step2'
         = link_to step2_path, class: 'btn btn-step action' do
           | 第二階段
           br
@@ -32,7 +32,7 @@
           | 第二階段
           br
           | 評估體能
-      - if params[:controller] == 'step3'
+      - if params[:action] == 'step3'
         = link_to step3_path, class: 'btn btn-step action' do
           | 第三階段
           br
