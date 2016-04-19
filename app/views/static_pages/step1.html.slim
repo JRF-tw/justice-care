@@ -1,0 +1,155 @@
+.col-xs-12
+  .col-md-2.text-right
+    .board-footer-left.visible-lg
+      = image_tag('left.png', height: '70px')
+  .board-footer.col-xs-12.col-md-8
+    p.text-center.lead
+      span.nobreak.pr-5
+        | 問題搜集
+        span.pl-5.step-logo
+          i.glyphicon.glyphicon-check
+      span.nobreak
+      span.nobreak 全面體檢找出台灣司法問題
+  .col-md-2
+    .board-footer-right.visible-lg
+      = image_tag('right.png', height: '70px')
+/! 佈告欄end
+/! 引言
+.col-xs-12.col-md-10.col-md-offset-1
+  .col-xs-12.col-md-8.col-md-offset-2
+    h2
+      span.foreword.pr-10 5/3-5/20
+    p.small.lead-text 一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+    p.small.lead-text 你對司法也有相同的感受嗎？請勾選你的意見
+/! 引言end
+.col-xs-12.col-md-8.col-md-offset-2
+  .btn-group.btn-group-sm.pl-64 data-toggle="buttons" 
+    label.btn.btn-list-1.pr-3
+      input#option1 name="options" type="radio" >/
+      | 由新至舊
+    label.btn.btn-list-2.pr-3
+      input#option2 name="options" type="radio" >/
+      | 由多至少
+    label.btn.btn-list-3.pr-3
+      input#option2 name="options" type="radio" >/
+      | 近期熱門
+/! 問題清單
+.col-xs-12.col-md-8.col-md-offset-2
+  table.table-bordered.table-list
+    tr
+      td
+        a.btn.btn-check href="#" 
+      td.list.lead
+        span.nbr-check +201
+        a data-toggle="modal" href="#symp-1"  法官的判決與人民的期待有落差
+    tr
+      td
+        a.btn.btn-check.active href="#" 
+      td.list.lead
+        span.nbr-check.active +179
+        a data-toggle="modal" href="#symp-2"  法官檢察官誤判了
+    tr
+      td
+        a.btn.btn-check href="#" 
+      td.list.lead
+        span.nbr-check +201
+        a data-toggle="modal" href="#symp-1"  一二三四五六七八九十一二三四五六七八九十一二
+    tr
+      td
+        a.btn.btn-check href="#" 
+      td.list.lead
+        span.nbr-check +201
+        a data-toggle="modal" href="#symp-1"  法官的判決與人民的期待有落差
+    tr
+      td
+        a.btn.btn-check href="#" 
+      td.list.lead
+        span.nbr-check +201
+        a data-toggle="modal" href="#symp-1"  法官的判決與人民的期待有落差
+  /! 分頁
+  .text-center
+    ul.pagination
+      li
+        a href="#"  «
+      li.active
+        a href="#" 
+          | 1
+          span.sr-only (current)
+      li
+        a href="#"  2
+      li
+        a href="#"  3
+      li
+        a href="#"  »
+  /! 分頁end
+/! 問題清單end
+.col-xs-12
+  .col-md-8.col-xs-12.col-md-offset-2
+    p.lead.text-gotalk
+      | 有更多不一樣的經歷？
+      span.nobreak 請告訴我們
+      a.btn.btn-gotalk href="http://talk.justice.care/" target="_blank"  分享經歷
+/! 經驗故事1
+#symp-1.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h4#symp-1.modal-title 為什麼法官判的跟我想的有那麼大的落差？
+      .modal-body.small
+        p 頂新劣油案、林益世索賄案、三秒襲胸無罪案…，法官判出來的結果與民眾期待不符，引起民意引彈。其實如果仔細去分析判決，不見得民眾對判決的理解都是正確的。判決與民眾認知的落差不代表法官或檢察官的判斷是對是錯，但是在溝通上看起來似乎是出了某些問題。
+        p.text-right
+          a.btn.btn-list-3 href="http://talk.justice.care/" target="_blank"  更多討論
+    /! /.modal-content
+  /! /.modal-dialog
+/! 經驗故事1end
+/! 經驗故事2
+#symp-2.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h4#symp-2.modal-title 法官檢察官誤判了
+      .modal-body.small
+        p 對司法來說，作出妥當正確的判斷是非常重要的事情。但是這件事就像遙不可及的夢想。許多訴訟當事人會覺得法官的裁判、檢察官的起訴或不起訴等等弄錯了事實、搞錯了法律，因而打破了他心中原本對司法公正平義的想像。
+        p.text-right
+          a.btn.btn-list-3 href="http://talk.justice.care/" target="_blank"  更多討論
+    /! /.modal-content
+  /! /.modal-dialog
+/! 經驗故事2end
+/! 登入
+#log_in.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h2#log_in.modal-title.text-center 登入
+        p.text-center.small 全民司改運動，多動多健康！
+      .modal-body.small
+        form.form-horizontal role="form" 
+          fieldset.scheduler-border
+            legend.scheduler-border 快速通關
+            .form-group
+              .col-sm-12.text-center
+                a.btn.btn-use-fb
+                  i.fa.fa-facebook
+                  | 使用Facebook
+                a.btn.btn-use-g type="button" 
+                  i.fa.fa-google
+                  | 使用Google
+        form.form-horizontal role="form" 
+          fieldset.scheduler-border
+            legend.scheduler-border 一般登入
+            .form-group
+              label.col-sm-2.control-label for="inputEmail3"  E-mail
+              .col-sm-8
+                input#inputEmail3.form-control placeholder="Email" type="email" /
+            .form-group
+              label.col-sm-2.control-label for="inputPassword3"  密碼
+              .col-sm-8
+                input#inputPassword3.form-control placeholder="Password" type="password" /
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-gotalk type="button"  登入
+    /! /.modal-content
+  /! /.modal-dialog

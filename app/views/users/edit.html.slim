@@ -1,0 +1,5 @@
+.row
+  .col-sm-8.col-sm-offset-2
+    = simple_form_for(@user) do |f|
+      = f.input :is_legal_profession, as: :boolean, label: '是否具有法律背景？'
+      = f.submit

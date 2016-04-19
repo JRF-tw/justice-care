@@ -1,0 +1,44 @@
+.col-xs-12
+  .board-container.col-xs-12.col-md-8.col-md-offset-2
+    .row
+      .pull-right.btn-group-sm.pr-10
+        - unless user_signed_in?
+          = link_to '登入', '#log_in', class: 'btn btn-log-in', data: {toggle: 'modal'}
+          = link_to '註冊', '#sign_up', class: 'btn btn-sign-up', data: {toggle: 'modal'}
+        - else
+          = link_to '登出', destroy_user_session_path, method: :delete
+    p.text-center
+      = link_to image_tag('logo-index.png', class: 'img-responsive center-block'), root_path
+    p.text-center
+      = image_tag('title.png', class: 'img-responsive center-block')
+    .row.text-center
+      - if params[:controller] == 'step1'
+        = link_to step1_path, class: 'btn btn-step action' do
+          | 第一階段
+          br
+          | 健康檢查
+      - else
+        = link_to step1_path, class: 'btn btn-step' do
+          | 第一階段
+          br
+          | 健康檢查
+      - if params[:controller] == 'step2'
+        = link_to step2_path, class: 'btn btn-step action' do
+          | 第二階段
+          br
+          | 評估體能
+      - else
+        = link_to step2_path, class: 'btn btn-step' do
+          | 第二階段
+          br
+          | 評估體能
+      - if params[:controller] == 'step3'
+        = link_to step3_path, class: 'btn btn-step action' do
+          | 第三階段
+          br
+          | 訓練項目
+      - else
+        = link_to step3_path, class: 'btn btn-step' do
+          | 第三階段
+          br
+          | 訓練項目

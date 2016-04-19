@@ -1,0 +1,86 @@
+- unless user_signed_in?
+  #log_in.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+          h2#log_in.modal-title.text-center 登入
+          p.text-center.small 全民司改運動，多動多健康！
+        .modal-body.small
+          fieldset.scheduler-border
+            legend.scheduler-border 快速通關
+            .form-group
+              .col-sm-12.text-center
+                = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-use-fb' do
+                  i.fa.fa-facebook.pr-3
+                  | 使用Facebook
+                = link_to user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-use-g' do
+                  i.fa.fa-google.pr-3
+                  | 使用Facebook
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
+            fieldset.scheduler-border
+              legend.scheduler-border 一般登入
+              .form-group
+                label.col-sm-2.control-label for="email"  E-mail
+                .col-sm-8
+                  = f.input :email, required: true, autofocus: true, label: false, placeholder: 'email', html: {class: 'form-control'}
+              .form-group
+                label.col-sm-2.control-label for="password"  密碼
+                .col-sm-8
+                  = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
+              .form-group
+                .col-sm-8
+                  = f.input :remember_me, as: :boolean, html: {class: 'form-control'} if devise_mapping.rememberable?
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  = f.button :submit, "登入", html:{class: "btn btn-gotalk"}
+
+  #sign_up.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+          h2#sign_up.modal-title.text-center 註冊
+          p.small.text-center 全民司法改革運動，預備備起！
+        .modal-body.small
+          fieldset.scheduler-border
+            legend.scheduler-border 快速通關
+            .form-group
+              .col-sm-4.text-center
+                label
+                  input name="is_legal_profession" type="checkbox" value="yes"
+                  strong
+                   u 具
+                  | 法律背景
+              .col-sm-8.text-center
+                = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-use-fb' do
+                  i.fa.fa-facebook.pr-3
+                  | 使用Facebook
+                = link_to user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-use-g' do
+                  i.fa.fa-google.pr-3
+                  | 使用Facebook
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
+            fieldset.scheduler-border
+              legend.scheduler-border 一般註冊
+              .form-group
+                label.col-sm-2.control-label for="email"  E-mail
+                .col-sm-8
+                  = f.input :email, required: true, autofocus: true, label: false, placeholder: 'email', html: {class: 'form-control'}
+              .form-group
+                label.col-sm-2.control-label for="password"  密碼
+                .col-sm-8
+                  = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
+              .form-group
+                label.col-sm-2.control-label for="password_confirmation"  密碼
+                .col-sm-8
+                  = f.input :password_confirmation, required: true, label: false, html: {class: 'form-control'}
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  label
+                    = f.input :is_legal_profession, label: false
+                    strong
+                     u 具
+                    | 法律背景
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  = f.button :submit, "註冊", html: {class: "btn btn-gotalk"}

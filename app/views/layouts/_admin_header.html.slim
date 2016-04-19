@@ -1,0 +1,25 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+        span.sr-only
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li
+          a href="admin-add.html"  新增問題
+        li
+          a href="admin-list.html"  修改/刪除
+        li
+          a href="admin-users.html"  後台使用者
+      .navbar-right.navbar-btn
+        a.btn.btn-default.btn-sm data-toggle="modal" href="#log_in" 
+          i.fa.fa-user.pr-5
+          | 登入
+        a.btn.btn-info.btn-sm href="#" 
+          i.fa.fa-lock.pr-5
+          | 登出
+        /! 未登入時出現登入按鈕；登入後只出現登出按鈕
+    /! /.nav-collapse

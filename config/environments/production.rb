@@ -47,6 +47,7 @@ Rails.application.configure do
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
+  config.logger = Logger.new(config.paths["log"].first, 'weekly')
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -71,9 +72,33 @@ Rails.application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  ActionMailer::Base.smtp_settings = {
+    :port           => Setting.smtp_settings.port,
+    :address        => Setting.smtp_settings.address,
+    :domain         => Setting.smtp_settings.domain,
+    :user_name      => Setting.smtp_settings.user_name,
+    :password       => Setting.smtp_settings.password,
+    :authentication => Setting.smtp_settings.authentication
+  }
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  config.lograge.enabled = true
+  config.lograge.custom_options = lambda do |event|
+    options = event.payload.slice(:request_id, :user_id, :ip)
+    options[:params] = event.payload[:params].except("controller", "action")
+    options
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => Setting.url.host, :protocol => Setting.url.protocol }
 end
+
