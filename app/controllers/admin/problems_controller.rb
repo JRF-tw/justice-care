@@ -3,8 +3,7 @@ class Admin::ProblemsController < Admin::BaseController
 
   # GET /problems
   def index
-    @q = Problem.includes(:categories).search(params[:q])
-    @problems = @q.result(distinct: true).page(params[:page])
+    @problems = Problem.all.page(params[:page])
     set_meta_tags({
       title: "主分類管理"
     })

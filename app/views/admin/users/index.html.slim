@@ -20,7 +20,7 @@
             - if user.provider = 'google_oauth2'
               i.fa.fa-google
             - elsif user.provider = 'facebook'
-              i.fa.fa-google
+              i.fa.fa-facebook
           td
             - if user.admin?
               | 有
@@ -28,10 +28,10 @@
               | 無
           td
             - if user.admin?
-              = simple_form_for u, url: admin_user_path(u), method: :put do |f|
+              = simple_form_for user, url: admin_user_path(user), method: :put do |f|
                 = f.input :admin, as: :hidden, :input_html => { :value => 0 }
                 = f.button :submit, "移除管理權限"
             - else
-              = simple_form_for u, url: admin_user_path(u), method: :put do |f|
+              = simple_form_for user, url: admin_user_path(user), method: :put do |f|
                 = f.input :admin, as: :hidden, :input_html => { :value => 1 }
                 = f.button :submit, "授與管理權限"

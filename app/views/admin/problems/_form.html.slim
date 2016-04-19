@@ -1,7 +1,7 @@
 .form-group
   = f.input :title, label: '問題', required: true, input_html: { class: 'form-control' }
 .form-group
-  = f.input :content, as: :textarea, label: '問題', required: true, input_html: { class: 'form-control redactor', row: '5' }
+  = f.input :content, as: :text, label: '問題', required: true, input_html: { class: 'form-control redactor', row: '5' }
 .form-group
   = f.input :link, label: '論壇連結', required: true, input_html: { class: 'form-control' }
 .form-group

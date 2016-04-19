@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    get '/', to: redirect('/problems')
+    get '/', to: redirect('/admin/problems')
     resources :problems
     resources :users, only: [:index, :update]
   end

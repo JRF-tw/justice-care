@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require twitter/bootstrap
 //= require redactor-rails
+//= require redactor-rails/plugins
 //= require redactor-rails/langs/zh_tw

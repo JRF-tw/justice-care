@@ -14,12 +14,12 @@
           td = problem.title
           td
             .btn-group.btn-group-sm
-            = link_to '編輯', edit_admin_problem(problem), class: "btn btn-default"
-            = link_to '刪除', admin_problem(problem), method: :delete, data: { confirm: '確認要刪除嗎？' }, class: "btn btn-default"
+            = link_to '編輯', edit_admin_problem_path(problem), class: "btn btn-default"
+            = link_to '刪除', admin_problem_path(problem), method: :delete, data: { confirm: '確認要刪除嗎？' }, class: "btn btn-default"
   /! 內容end
   .text-center
     /! pagination start
     /! to雨蒼:顯示15則
-    = paginate @problem
+    = paginate @problems
 /! 登入
 
