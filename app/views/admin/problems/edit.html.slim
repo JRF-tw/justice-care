@@ -1,0 +1,33 @@
+.container.col-lg-8.col-lg-offset-2
+  /! 內容
+  h1.text-center 編輯問題
+  form role="form-horizontal" 
+    .form-group
+      label *問題
+      input.form-control id="" placeholder="一句話" type="text" /
+    .form-group
+      label *說明/簡述
+      textarea.form-control placeholder="to雨蒼:此處為編輯器" rows="5" 
+    .form-group
+      label 外加票數
+      input.form-control id="" placeholder="外加票數" type="number" /
+    button.btn.btn-default type="submit"  儲存
+  /! 內容end
+/! 登入
+#log_in.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h2#log_in.modal-title.text-center 登入管理介面
+      .modal-body.small
+        form.form-horizontal role="form" 
+          .form-group.text-center
+            button.btn.btn-default type="button" 
+              i.fa.fa-facebook.pr-5
+              | 使用Facebook
+            button.btn.btn-default type="button" 
+              i.fa.fa-google.pr-5
+              | 使用Google
+    /! /.modal-content
+  /! /.modal-dialog

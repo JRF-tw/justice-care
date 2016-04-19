@@ -1,0 +1,24 @@
+.container.col-lg-8.col-lg-offset-2
+  /! 內容
+  h1.text-center 新增問題
+  = simple_form_for @problem, url: admin_problems_path, class: 'form-horizontal' do |f|
+    = render :partial => 'form', :locals => { :f => f }
+  /! 內容end
+/! 登入
+#log_in.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+        h2#log_in.modal-title.text-center 登入管理介面
+      .modal-body.small
+        form.form-horizontal role="form" 
+          .form-group.text-center
+            button.btn.btn-default type="button" 
+              i.fa.fa-facebook.pr-5
+              | 使用Facebook
+            button.btn.btn-default type="button" 
+              i.fa.fa-google.pr-5
+              | 使用Google
+    /! /.modal-content
+  /! /.modal-dialog

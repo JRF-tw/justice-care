@@ -4,7 +4,13 @@ class StaticPagesController < ApplicationController
   end
 
   def step1
-    @problems = Problem.all
+    if params[:order] == 'hot'
+      @problems = Problem.hot_order.page(params[:page])
+    elsif params[:order] == 'lastest'
+      @problems = Problem.lastest_order.page(params[:page])
+    else
+      @problems = Problem.votes_order.page(params[:page])
+    end
   end
 
   def step2

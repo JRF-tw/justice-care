@@ -37,6 +37,9 @@ gem 'pg'
 gem 'ransack'
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
+gem 'redactor-rails'
+gem "carrierwave"
+gem "mini_magick"
 # gem 'lograge'
 
 # Use ActiveModel has_secure_password

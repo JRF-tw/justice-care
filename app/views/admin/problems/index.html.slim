@@ -8,60 +8,18 @@
         th 問題清單
         th 編輯/刪除
     tbody
-      tr
-        td 1
-        td 法官的判決與人民的期待有落差
-        td
-          .btn-group.btn-group-sm
-            a.btn.btn-default href="admin-edit.html"  編輯
-            a.btn.btn-default href="#"  刪除
-      tr
-        td 2
-        td 法官的判決與人民的期待有落差
-        td
-          .btn-group.btn-group-sm
-            a.btn.btn-default href="admin-edit.html"  編輯
-            a.btn.btn-default href="#"  刪除
-      tr
-        td 3
-        td 法官的判決與人民的期待有落差
-        td
-          .btn-group.btn-group-sm
-            a.btn.btn-default href="admin-edit.html"  編輯
-            a.btn.btn-default href="#"  刪除
+      - @problems.each do |problem|
+        tr
+          td = problem.id
+          td = problem.title
+          td
+            .btn-group.btn-group-sm
+            = link_to '編輯', edit_admin_problem(problem), class: "btn btn-default"
+            = link_to '刪除', admin_problem(problem), method: :delete, data: { confirm: '確認要刪除嗎？' }, class: "btn btn-default"
   /! 內容end
   .text-center
     /! pagination start
     /! to雨蒼:顯示15則
-    ul.pagination
-      li
-        a href="#"  «
-      li.active
-        a href="#" 
-          | 1
-          span.sr-only (current)
-      li
-        a href="#"  2
-      li
-        a href="#"  3
-      li
-        a href="#"  »
-    /! pagination end
+    = paginate @problem
 /! 登入
-#log_in.modal.fade.in
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
-        h2#log_in.modal-title.text-center 登入管理介面
-      .modal-body.small
-        form.form-horizontal role="form" 
-          .form-group.text-center
-            button.btn.btn-default type="button" 
-              i.fa.fa-facebook.pr-5
-              | 使用Facebook
-            button.btn.btn-default type="button" 
-              i.fa.fa-google.pr-5
-              | 使用Google
-    /! /.modal-content
-  /! /.modal-dialog
+

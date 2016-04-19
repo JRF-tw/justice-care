@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,6 +11,18 @@ Rails.application.routes.draw do
   match '/step3',    to: 'static_pages#step3',    via: 'get'
 
   resources :users, only: [:update, :edit]
+  resources :problems, only: [] do
+    member do
+      post 'vote'
+      delete 'unvote'
+    end
+  end
+
+  namespace :admin do
+    get '/', to: redirect('/problems')
+    resources :problems
+    resources :users, only: [:index, :update]
+  end
 
   # root 'welcome#index'
 
