@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap
-//= require redactor-rails
+//= require redactor-rails/redactor.min
 //= require redactor-rails/plugins
 //= require redactor-rails/langs/zh_tw
 //= require redactor-rails/app_config
