@@ -17,6 +17,14 @@
 //= require twitter/bootstrap
 
 $( document ).ready(function() {
+  if(window.location.hash) {
+      var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+      if (hash == 'log_in' && $('#log_in').length > 0) {
+        $('#log_in').modal('show');
+      } else if (hash == 'sign_up' && $('#sign_up').length > 0){
+        $('#sign_up').modal('show');
+      }
+  }
   $.ajaxSetup({
     headers: {
       'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
