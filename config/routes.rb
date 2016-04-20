@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
   mount RedactorRails::Engine => '/redactor_rails'
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+  as :user do
+    post "/users/sign_in" => "devise/sessions#create", as: :user_session
+    delete "/users/sign_out" => "devise/sessions#destroy", as: :destroy_user_session
+    post "/users" => "devise/registrations#create", as: :user_registration
+    get "/users/cancel" => "devise/registrations#cancel", as: :cancel_user_registration
+    get "/users/edit" => "devise/registrations#edit", as: :edit_user_registration
+    patch "/users" => "devise/registrations#update"
+    put "/users" => "devise/registrations#update"
+    delete "/users" => "devise/registrations#destroy"
+  end
+
+
   root 'static_pages#home'
   match '/step1',    to: 'static_pages#step1',    via: 'get'
   match '/step2',    to: 'static_pages#step2',    via: 'get'
