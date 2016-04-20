@@ -23,6 +23,10 @@ $( document ).ready(function() {
         $('#log_in').modal('show');
       } else if (hash == 'sign_up' && $('#sign_up').length > 0){
         $('#sign_up').modal('show');
+      } else if (hash == 'get_pw' && $('#get_pw').length > 0){
+        $('#get_pw').modal('show');
+      } else if (hash == 'edit_pw' && $('#edit_pw').length > 0){
+        $('#edit_pw').modal('show');
       }
   }
   $.ajaxSetup({
