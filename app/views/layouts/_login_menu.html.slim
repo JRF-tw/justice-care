@@ -49,9 +49,7 @@
               .col-sm-4.text-center
                 label
                   input name="is_legal_profession" type="checkbox" value="yes"
-                  strong
-                   u 具
-                  | 法律背景
+                  | 具法律背景
               .col-sm-8.text-center
                 = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-use-fb' do
                   i.fa.fa-facebook.pr-3
@@ -71,16 +69,14 @@
                 .col-sm-8
                   = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
               .form-group
-                label.col-sm-2.control-label for="password_confirmation"  密碼
+                label.col-sm-2.control-label for="password_confirmation"  確認密碼
                 .col-sm-8
                   = f.input :password_confirmation, required: true, label: false, html: {class: 'form-control'}
               .form-group
                 .col-sm-offset-2.col-sm-10
                   label
                     = f.input :is_legal_profession, label: false
-                    strong
-                     u 具
-                    | 法律背景
+                    | 具法律背景
               .form-group
                 .col-sm-offset-2.col-sm-10
                   = f.button :submit, "註冊", html: {class: "btn btn-gotalk"}
