@@ -22,19 +22,20 @@
             fieldset.scheduler-border
               legend.scheduler-border 一般登入
               .form-group
-                label.col-sm-2.control-label for="email"  E-mail
+                label.col-sm-2.control-label for="user[email]"  E-mail
                 .col-sm-8
                   = f.input :email, required: true, autofocus: true, label: false, placeholder: 'email', html: {class: 'form-control'}
               .form-group
-                label.col-sm-2.control-label for="password"  密碼
+                label.col-sm-2.control-label for="user[password]"  密碼
                 .col-sm-8
                   = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
               .form-group
                 .col-sm-8
                   = f.input :remember_me, as: :boolean, html: {class: 'form-control'} if devise_mapping.rememberable?
               .form-group
-                .col-sm-offset-2.col-sm-10
+                .text-center
                   = f.button :submit, "登入", html:{class: "btn btn-gotalk"}
+                  = link_to '忘記密碼', '#get_pw', class: 'btn btn-gotalk', data: {toggle: 'modal'}
 
   #sign_up.modal.fade.in
     .modal-dialog
@@ -62,15 +63,15 @@
             fieldset.scheduler-border
               legend.scheduler-border 一般註冊
               .form-group
-                label.col-sm-2.control-label for="email"  E-mail
+                label.col-sm-2.control-label for="user[email]"  E-mail
                 .col-sm-8
                   = f.input :email, required: true, autofocus: true, label: false, placeholder: 'email', html: {class: 'form-control'}
               .form-group
-                label.col-sm-2.control-label for="password"  密碼
+                label.col-sm-2.control-label for="user[password]"  密碼
                 .col-sm-8
                   = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
               .form-group
-                label.col-sm-2.control-label for="password_confirmation"  確認密碼
+                label.col-sm-2.control-label for="user[password_confirmation]"  確認密碼
                 .col-sm-8
                   = f.input :password_confirmation, required: true, label: false, html: {class: 'form-control'}
               .form-group
@@ -81,6 +82,24 @@
               .form-group
                 .col-sm-offset-2.col-sm-10
                   = f.button :submit, "註冊", html: {class: "btn btn-gotalk"}
+  #get_pw.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" 
+            i.fa.fa-times.fa-2
+          h2#edit_pw.modal-title.text-center 忘記密碼
+          p.text-center.small 請填寫您註冊的E-mail，我們會將密碼寄送給您。
+        .modal-body.small
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: , html: {class: 'form-horizontal', role: 'form', method: :post}) do |f|
+            .form-group
+              label.col-sm-2.control-label for="user[email]"  E-mail
+              .col-sm-8
+                = f.input :email, required: true, autofocus: true, label: false
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                = f.button :submit, "送出", html: {class: "btn btn-gotalk"}
+
 - else
   /! 修改
   #edit_pw.modal.fade.in
@@ -91,39 +110,16 @@
             i.fa.fa-times.fa-2
           h2#edit_pw.modal-title.text-center 修改密碼
         .modal-body.small
-          form.form-horizontal role="form" 
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal', role: 'form', method: :put}) do |f|
             .form-group
-              label.col-sm-2.control-label for="inputEmail3"  E-mail
+              label.col-sm-2.control-label for="user[password]"  密碼
               .col-sm-8
-                input.form-control placeholder="Email" type="email" /
+                = f.input :password, label: false, required: true, autofocus: true
             .form-group
-              label.col-sm-2.control-label for="inputPassword3"  密碼
+              label.col-sm-2.control-label for="user[password_confirmation]"  確認密碼
               .col-sm-8
-                input.form-control placeholder="Password" type="password" /
-            .form-group
-              label.col-sm-2.control-label for="inputPassword3"  確認密碼
-              .col-sm-8
-                input.form-control placeholder="Password" type="password" /
+                = f.input :password_confirmation, label: false, require: true
             .form-group
               .col-sm-offset-2.col-sm-10
-                button.btn.btn-gotalk type="button"  送出
-
-  #get_pw.modal.fade.in
-    .modal-dialog
-      .modal-content
-        .modal-header
-          button.close aria-hidden="true" data-dismiss="modal" type="button" 
-            i.fa.fa-times.fa-2
-          h2#edit_pw.modal-title.text-center 忘記密碼
-          p.text-center.small 請填寫您註冊的E-mail，我們會將密碼寄送給您。
-        .modal-body.small
-          form.form-horizontal role="form" 
-            .form-group
-              label.col-sm-2.control-label for="inputEmail3"  E-mail
-              .col-sm-8
-                input.form-control placeholder="Email" type="email" /
-            .form-group
-              .col-sm-offset-2.col-sm-10
-                button.btn.btn-gotalk type="button"  送出
-
+                = f.button :submit, "送出", html: {class: "btn btn-gotalk"}
 
