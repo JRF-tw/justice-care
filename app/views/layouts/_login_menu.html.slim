@@ -34,7 +34,7 @@
                   = f.input :remember_me, as: :boolean, label: '記住密碼', html: {class: 'form-control'} if devise_mapping.rememberable?
               .form-group
                 .text-center
-                  = f.button :submit, "登入", class: "btn btn-gotalk"
+                  = f.button :submit, "登入", class: "btn btn-gotalk pr-3"
                   = link_to '忘記密碼', '#get_pw', class: 'btn btn-gotalk', data: {toggle: 'modal'}
 
   #sign_up.modal.fade.in
