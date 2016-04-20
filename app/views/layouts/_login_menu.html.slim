@@ -86,7 +86,7 @@
           h2#edit_pw.modal-title.text-center 忘記密碼
           p.text-center.small 請填寫您註冊的E-mail，我們會將密碼寄送給您。
         .modal-body.small
-          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: , html: {class: 'form-horizontal', role: 'form', method: :post}) do |f|
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal', role: 'form', method: :post}) do |f|
             .form-group
               label.col-sm-2.control-label for="user[email]"  E-mail
               .col-sm-8
