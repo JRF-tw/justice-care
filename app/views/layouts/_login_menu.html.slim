@@ -30,8 +30,8 @@
                 .col-sm-8
                   = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
               .form-group
-                .col-sm-8
-                  = f.input :remember_me, as: :boolean, html: {class: 'form-control'} if devise_mapping.rememberable?
+                .col-sm-8.col-sm-offset-2
+                  = f.input :remember_me, as: :boolean, label: '記住密碼', html: {class: 'form-control'} if devise_mapping.rememberable?
               .form-group
                 .text-center
                   = f.button :submit, "登入", html:{class: "btn btn-gotalk"}
@@ -48,11 +48,7 @@
           fieldset.scheduler-border
             legend.scheduler-border 快速通關
             .form-group
-              .col-sm-4.text-center
-                label
-                  input name="is_legal_profession" type="checkbox" value="yes"
-                  | 具法律背景
-              .col-sm-8.text-center
+              .col-sm-12.text-center
                 = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-use-fb' do
                   i.fa.fa-facebook.pr-3
                   | 使用Facebook
@@ -77,8 +73,7 @@
               .form-group
                 .col-sm-offset-2.col-sm-10
                   label
-                    = f.input :is_legal_profession, label: false
-                    | 具法律背景
+                    = f.input :is_legal_profession, label: '具法律背景'
               .form-group
                 .col-sm-offset-2.col-sm-10
                   = f.button :submit, "註冊", html: {class: "btn btn-gotalk"}
