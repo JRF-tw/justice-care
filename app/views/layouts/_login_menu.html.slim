@@ -30,8 +30,8 @@
                 .col-sm-8
                   = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
               .form-group
-                .col-sm-8
-                  = f.input :remember_me, as: :boolean, html: {class: 'form-control'} if devise_mapping.rememberable?
+                .col-sm-8.col-sm-offset-2
+                  = f.input :remember_me, as: :boolean, label: '記住密碼', html: {class: 'form-control'} if devise_mapping.rememberable?
               .form-group
                 .col-sm-offset-2.col-sm-10
                   = f.button :submit, "登入", html:{class: "btn btn-gotalk"}
