@@ -3,7 +3,7 @@
     .row
       .pull-right.btn-group-sm.pr-10
         - unless user_signed_in?
-          = link_to '登入', '#log_in', class: 'btn btn-log-in', data: {toggle: 'modal'}
+          = link_to '登入', '#log_in', class: 'btn btn-log-in pr-3', data: {toggle: 'modal'}
           = link_to '註冊', '#sign_up', class: 'btn btn-sign-up', data: {toggle: 'modal'}
         - else
           = link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-sign-up'
@@ -13,32 +13,32 @@
       = image_tag('title.png', class: 'img-responsive center-block')
     .row.text-center
       - if params[:action] == 'step1'
-        = link_to step1_path, class: 'btn btn-step action' do
+        = link_to step1_path, class: 'btn btn-step action pr-5' do
           | 第一階段
           br
           | 健康檢查
       - else
-        = link_to step1_path, class: 'btn btn-step' do
+        = link_to step1_path, class: 'btn btn-step pr-5' do
           | 第一階段
           br
           | 健康檢查
       - if params[:action] == 'step2'
-        = link_to step2_path, class: 'btn btn-step action' do
+        = link_to step2_path, class: 'btn btn-step action pr-5' do
           | 第二階段
           br
           | 評估體能
       - else
-        = link_to step2_path, class: 'btn btn-step' do
+        = link_to step2_path, class: 'btn btn-step pr-5' do
           | 第二階段
           br
           | 評估體能
       - if params[:action] == 'step3'
-        = link_to step3_path, class: 'btn btn-step action' do
+        = link_to step3_path, class: 'btn btn-step action pr-5' do
           | 第三階段
           br
           | 訓練項目
       - else
-        = link_to step3_path, class: 'btn btn-step' do
+        = link_to step3_path, class: 'btn btn-step pr-5' do
           | 第三階段
           br
           | 訓練項目
