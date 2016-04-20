@@ -18,6 +18,7 @@
                   i.fa.fa-google.pr-3
                   | 使用Google
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
+            = render 'shared/error_messages', object: f.object
             fieldset.scheduler-border
               legend.scheduler-border 一般登入
               .form-group
@@ -80,3 +81,49 @@
               .form-group
                 .col-sm-offset-2.col-sm-10
                   = f.button :submit, "註冊", html: {class: "btn btn-gotalk"}
+- else
+  /! 修改
+  #edit_pw.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" 
+            i.fa.fa-times.fa-2
+          h2#edit_pw.modal-title.text-center 修改密碼
+        .modal-body.small
+          form.form-horizontal role="form" 
+            .form-group
+              label.col-sm-2.control-label for="inputEmail3"  E-mail
+              .col-sm-8
+                input.form-control placeholder="Email" type="email" /
+            .form-group
+              label.col-sm-2.control-label for="inputPassword3"  密碼
+              .col-sm-8
+                input.form-control placeholder="Password" type="password" /
+            .form-group
+              label.col-sm-2.control-label for="inputPassword3"  確認密碼
+              .col-sm-8
+                input.form-control placeholder="Password" type="password" /
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-gotalk type="button"  送出
+
+  #get_pw.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" 
+            i.fa.fa-times.fa-2
+          h2#edit_pw.modal-title.text-center 忘記密碼
+          p.text-center.small 請填寫您註冊的E-mail，我們會將密碼寄送給您。
+        .modal-body.small
+          form.form-horizontal role="form" 
+            .form-group
+              label.col-sm-2.control-label for="inputEmail3"  E-mail
+              .col-sm-8
+                input.form-control placeholder="Email" type="email" /
+            .form-group
+              .col-sm-offset-2.col-sm-10
+                button.btn.btn-gotalk type="button"  送出
+
+

@@ -1,0 +1,9 @@
+- if object.errors.any?
+  .alert.alert-warning.fade.in.col-xs-12.col-sm-8.pull-left
+    - object.errors.full_messages.each do |msg|
+      button.close aria-hidden="true" data-dismiss="alert" type="button"
+        i.fa.fa-times.fa-2
+      p
+        strong
+          i.fa.fa-ban.pl-5.pr-5
+        = msg
