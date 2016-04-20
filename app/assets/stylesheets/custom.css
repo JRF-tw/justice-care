@@ -157,8 +157,8 @@ body {
 }
 /*勾選按鈕*/
 .btn-check:before{
-  content:"\e067";
-  font-family:"Glyphicons Halflings";
+  content:"\f046";
+  font-family: FontAwesome !important; 
 }
 .btn-check{
   border-radius: 0px !important;
