@@ -17,6 +17,9 @@ body {
   padding: 3px;
 }
 /*登入按鈕*/
+.form-group{
+  margin-bottom: 5px;
+}
 .btn-log-in{
   background-color: #86c26b;
   font-size: 14px;
