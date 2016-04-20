@@ -34,7 +34,7 @@
                   = f.input :remember_me, as: :boolean, label: '記住密碼', html: {class: 'form-control'} if devise_mapping.rememberable?
               .form-group
                 .text-center
-                  = f.button :submit, "登入", html:{class: "btn btn-gotalk"}
+                  = f.button :submit, "登入", class: "btn btn-gotalk"
                   = link_to '忘記密碼', '#get_pw', class: 'btn btn-gotalk', data: {toggle: 'modal'}
 
   #sign_up.modal.fade.in
@@ -56,6 +56,7 @@
                   i.fa.fa-google.pr-3
                   | 使用Google
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
+            = render 'shared/error_messages', object: f.object
             fieldset.scheduler-border
               legend.scheduler-border 一般註冊
               .form-group
@@ -76,7 +77,7 @@
                     = f.input :is_legal_profession, label: '具法律背景'
               .form-group
                 .col-sm-offset-2.col-sm-10
-                  = f.button :submit, "註冊", html: {class: "btn btn-gotalk"}
+                  = f.button :submit, "註冊", class: "btn btn-gotalk"
   #get_pw.modal.fade.in
     .modal-dialog
       .modal-content
@@ -87,13 +88,14 @@
           p.text-center.small 請填寫您註冊的E-mail，我們會將密碼寄送給您。
         .modal-body.small
           = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal', role: 'form', method: :post}) do |f|
+            = render 'shared/error_messages', object: f.object
             .form-group
               label.col-sm-2.control-label for="user[email]"  E-mail
               .col-sm-8
                 = f.input :email, required: true, autofocus: true, label: false
             .form-group
               .col-sm-offset-2.col-sm-10
-                = f.button :submit, "送出", html: {class: "btn btn-gotalk"}
+                = f.button :submit, "送出", class: "btn btn-gotalk"
 
 - else
   /! 修改
@@ -106,6 +108,7 @@
           h2#edit_pw.modal-title.text-center 修改密碼
         .modal-body.small
           = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal', role: 'form', method: :put}) do |f|
+            = render 'shared/error_messages', object: f.object
             .form-group
               label.col-sm-2.control-label for="user[password]"  密碼
               .col-sm-8
@@ -116,5 +119,5 @@
                 = f.input :password_confirmation, label: false, require: true
             .form-group
               .col-sm-offset-2.col-sm-10
-                = f.button :submit, "送出", html: {class: "btn btn-gotalk"}
+                = f.button :submit, "送出", class: "btn btn-gotalk"
 

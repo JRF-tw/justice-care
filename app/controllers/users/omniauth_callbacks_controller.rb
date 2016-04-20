@@ -14,9 +14,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to edit_user_path(@user)
       else
         session["devise.facebook_data"] = request.env["omniauth.auth"]
-        puts session.to_json
-        # puts request.env.to_json
-        redirect_to new_user_registration_url
+        redirect_to root_path
       end
     end
   end
@@ -33,7 +31,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to edit_user_path(@user)
       else
         session["devise.google_data"] = request.env["omniauth.auth"]
-        redirect_to new_user_registration_url
+        redirect_to root_path
       end
     end
   end
