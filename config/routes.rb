@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     post "/users" => "devise/registrations#create", as: :user_registration
     get "/users/cancel" => "devise/registrations#cancel", as: :cancel_user_registration
     get "/users/edit" => "devise/registrations#edit", as: :edit_user_registration
+    get "/users/bg" => "users#edit", as: :edit_user_bg
     patch "/users" => "devise/registrations#update"
     put "/users" => "devise/registrations#update"
     delete "/users" => "devise/registrations#destroy"

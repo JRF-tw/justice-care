@@ -11,7 +11,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user.skip_confirmation!
       if @user.save
         sign_in @user
-        redirect_to edit_user_path(@user)
+        redirect_to edit_user_bg_path
       else
         session["devise.facebook_data"] = request.env["omniauth.auth"]
         redirect_to root_path
@@ -28,7 +28,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user.skip_confirmation!
       if @user.save
         sign_in @user
-        redirect_to edit_user_path(@user)
+        redirect_to edit_user_bg_path
       else
         session["devise.google_data"] = request.env["omniauth.auth"]
         redirect_to root_path
