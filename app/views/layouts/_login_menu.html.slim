@@ -47,11 +47,7 @@
           fieldset.scheduler-border
             legend.scheduler-border 快速通關
             .form-group
-              .col-sm-4.text-center
-                label
-                  input name="is_legal_profession" type="checkbox" value="yes"
-                  | 具法律背景
-              .col-sm-8.text-center
+              .col-sm-12.text-center
                 = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-use-fb' do
                   i.fa.fa-facebook.pr-3
                   | 使用Facebook
