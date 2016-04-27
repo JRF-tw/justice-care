@@ -3,7 +3,7 @@ class Admin::ProblemsController < Admin::BaseController
 
   # GET /problems
   def index
-    @problems = Problem.all.page(params[:page])
+    @problems = Problem.order(id: :asc).page(params[:page])
     set_meta_tags({
       title: "主分類管理"
     })
