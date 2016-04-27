@@ -8,6 +8,16 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+    set_meta_tags({
+      title: '修改法律背景',
+      description: '',
+      keywords: '',
+      og: {
+        type: 'website',
+        title: '修改法律背景',
+        description: ''
+      }
+    })
   end
 
   def edit
