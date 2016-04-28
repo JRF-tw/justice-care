@@ -27,15 +27,16 @@
       | 蒐集問題的日期從05/03開始，到05/20為一個階段。05/20之後，蒐集問題的平台並
       strong 不會停止運作
       | ，仍然會繼續開放留言，但第二階段的評估範圍還是會以05/20之前蒐集到的問題為優先處理的對象。
-    p.small.lead-text 
-      strong 說明
-    ul
-      li.small.lead-text 司法哪裡有問題？請勾選你認同的選項，選項可以複選。
-      li.small.lead-text 勾選後，你會看到每個選項的最新票數。點選文字描述會打開更多的說明。
-      li.small.lead-text 
-        | 如果沒有適合的選項，你可以先到「
-        = link_to '分享經歷', 'http://talk.justice.care/', target:'_blank'
-        | 」的論壇留言，說明你看到的司法問題，版主會協助確認問題，寫成一句話，成為正式選項，供你及大家點選。
+    .well
+      p.small.lead-text 
+        strong 說明
+      ul
+        li.small.lead-text 司法哪裡有問題？請勾選你認同的選項，選項可以複選。
+        li.small.lead-text 勾選後，你會看到每個選項的最新票數。點選文字描述會打開更多的說明。
+        li.small.lead-text 
+          | 如果沒有適合的選項，你可以先到論壇中「
+          = link_to '提出新問題', 'http://talk.justice.care/c/ask', target:'_blank'
+          | 」，說明你看到的司法問題，版主會協助確認問題，寫成一句話，成為正式選項，供你及大家點選。
 /! 引言end
 .col-xs-12.col-md-8.col-md-offset-2
   .btn-group.btn-group-sm.pl-64
@@ -83,6 +84,18 @@
       | 有更多不一樣的經歷？
       span.nobreak 請告訴我們
       = link_to '分享經歷', 'http://talk.justice.care/', target: '_blank', class: 'btn btn-gotalk'
+.col-xs-12
+  .col-md-8.col-xs-12.col-md-offset-2
+    .col-sm-6.pull-left
+      h2.text-header
+        = link_to root_path do
+          i.fa.fa-arrow-left
+          | &nbsp;看活動說明
+    .col-sm-6.pull-right
+      h2.text-header
+        = link_to step2_path do
+          前往評估體能&nbsp;
+          i.fa.fa-arrow-left
 /! 經驗故事1
 - @problems.each do |problem|
   .modal.fade.in id="problem-#{problem.id}"
