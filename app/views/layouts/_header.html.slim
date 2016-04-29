@@ -1,6 +1,9 @@
 .col-xs-12
   .board-container.col-xs-12.col-md-8.col-md-offset-2
     .row
+      .pull-left.btn-group-sm
+        = link_to root_path, class: 'btn btn-sign-up pl-3' do
+          | 活動說明
       .pull-right.btn-group-sm.pr-10
         - unless user_signed_in?
           = link_to '登入', '#log_in', class: 'btn btn-log-in pr-3', data: {toggle: 'modal'}

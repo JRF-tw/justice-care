@@ -20,7 +20,10 @@
     h1.text-header.text-center
       span.foreword.hidden-xs.pr-10 前言
       | 司法怎麼了？
-    p 這些年，我們習慣了每天望著新聞裡一件又一件的司法爭議案件，每一次我們都不由得在心裡響起這樣的疑問：「台灣的司法怎麼了？」然後每一次，繼續為自己的無能為力嘆息… 日前媒體紛紛引用一份民意調查，指出台灣民眾對於法官、檢察官的不信任度，竟然超過八成。不過，司法院自行公佈的調查結果，民眾對法官信任比率為 44.0％，不信任則為48.5％，落差頗大。但無論何者，達到「值得人民信賴的司法」這樣的目標，都還有一段路要走。
+    p
+      | 這些年，我們習慣了每天望著新聞裡一件又一件的司法爭議案件，每一次我們都不由得在心裡響起這樣的疑問：「台灣的司法怎麼了？」然後每一次，繼續為自己的無能為力嘆息… 日前媒體紛紛引用一份民意調查，指出台灣民眾對於法官、檢察官的不信任度，竟然超過八成。不過，司法院自行公佈的
+      =link_to '調查結果', 'http://www.judicial.gov.tw/juds/u104.pdf', target:'_blank'
+      | ，民眾對法官信任比率為 44.0％，不信任則為48.5％，落差頗大。但無論何者，達到「值得人民信賴的司法」這樣的目標，都還有一段路要走。
     p 然而，回首司法改革的路上，台灣不是沒有努力過。
 
     p 1999年，司法院為了回應民間對司法改革的期待，召開了一場為期三天的「全國司法改革會議」。為了籌辦這場大會，會前舉辦了9次籌備委員會議，1次預備會議。三天的會議集結了上百位院、部、審、檢、辯、學、中央民代、警界、民間團體等各界重要代表，作成32項司法改革議案的決議，留下兩本堪稱巨冊的會議紀錄，以作為日後司法改革的重要依據。那個夏天，司法改革的大旗被高高揚起，前進的路上看似充滿著希望。
@@ -28,8 +31,9 @@
     .row
       .col-sm-7
         p.text-header
-          | 若對台灣司法懷有期許和熱情，
+          span.nobreak 若對台灣司法懷有期許和熱情，
           span.nobreak 現在，就是你站出來的時候。
+          span.nobreak 跟我們一起做「全民司改運動」！
       .col-sm-5.pull-right.col-xs-8
         = image_tag('brid-1.png', width: '100%')
 /! 分隔線
@@ -42,7 +46,7 @@
       span.nobreak 全民參與，
       span.nobreak 一切就有可能
     p.text-center.row
-      = image_tag('bar.png', class: 'img-responsive center-block')
+      = image_tag('bar1.png', class: 'img-responsive center-block')
     dl.dl-horizontal
       dt
         span.foreword 目標
@@ -77,21 +81,26 @@
               = link_to step1_path do
                 i.fa.fa-link
             ul.list-unstyled
-              li 全民參與．全面體檢找出台灣司法問題
+              li 全面體檢，蒐集各方意見，了解大家覺得司法哪裡有問題。
           li
             span.text-header
               | 評估體能&nbsp;
               = link_to step2_path do
                 i.fa.fa-link
             ul.list-unstyled
-              li 專家參與．評估問題背後的成因
+              li 針對體檢出的司法問題，評估司法問題背後可能的結構性成因（也就是針對表面上的問題，分析背後涉及的制度性問題）。
           li
             span.text-header
               | 訓練項目&nbsp;
               = link_to step3_path do
                 i.fa.fa-link
             ul.list-unstyled
-              li 專家、官方、公民參與．提出問題的各種解法，列舉優缺及配套尋求共識
+              li 針對結構性成因，提出各種司法改革方案，列舉優、缺及配套措施，以尋求改革共識。
     .col-sm-6.pull-left
       = image_tag('brid-2.png', width: '100%')
+    .col-sm-6.pull-right.text-right
+      h2.text-header
+        = link_to step1_path do
+          | 健康檢查
+          i.fa.fa-arrow-right.pl-5
 

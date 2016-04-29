@@ -1,13 +1,13 @@
 class StaticPagesController < ApplicationController
   def home
     set_meta_tags({
-      title: '首頁',
-      description: '',
+      title: '活動說明',
+      description: '若對台灣司法懷有期許和熱情，現在，就是你站出來的時候。跟我們一起做「全民司改運動」！',
       keywords: '司法改革',
       og: {
         type: 'website',
-        title: '首頁',
-        description: ''
+        title: '活動說明',
+        description: '若對台灣司法懷有期許和熱情，現在，就是你站出來的時候。跟我們一起做「全民司改運動」！'
       }
     })
   end
@@ -35,12 +35,12 @@ class StaticPagesController < ApplicationController
   def step2
     set_meta_tags({
       title: '評估體能',
-      description: '',
+      description: '評估問題背後的成因',
       keywords: '司法改革',
       og: {
         type: 'website',
         title: '評估體能',
-        description: ''
+        description: '評估問題背後的成因'
       }
     })
   end
@@ -48,12 +48,12 @@ class StaticPagesController < ApplicationController
   def step3
     set_meta_tags({
       title: '訓練項目',
-      description: '',
+      description: '對問題生成的體制因素討論解方',
       keywords: '司法改革',
       og: {
         type: 'website',
         title: '訓練項目',
-        description: ''
+        description: '對問題生成的體制因素討論解方'
       }
     })
   end
