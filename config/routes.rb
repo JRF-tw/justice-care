@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   match '/step1',    to: 'static_pages#step1',    via: 'get'
   match '/step2',    to: 'static_pages#step2',    via: 'get'
   match '/step3',    to: 'static_pages#step3',    via: 'get'
+  get '/', to: 'static_pages#home', as: :new_user_session
 
   resources :users, only: [:update, :edit]
   resources :problems, only: [] do
