@@ -39,7 +39,7 @@ $( document ).ready(function() {
   var vote_problem, unvote_problem;
 
   vote_problem = function() {
-    console.log('vote click');
+    // console.log('vote click');
     var id = $(this).data("id")
     var url = '/problems/' + id + '/vote'
     $.ajax({
@@ -53,7 +53,7 @@ $( document ).ready(function() {
         authenticity_token: window._token
       }
     }).done(function( data ) {
-      console.log( data );
+      // console.log( data );
       if (data['status'] == 'success'){
         $('#problem-' + id + '-votes-count').text('+' + data['votes_count']);
         $('#problem-' + id + '-votes-count').addClass('active');
@@ -68,7 +68,7 @@ $( document ).ready(function() {
 
   };
   unvote_problem = function() {
-    console.log('unvote click');
+    // console.log('unvote click');
     var id = $(this).data("id")
     var url = '/problems/' + id + '/unvote'
     $.ajax({
@@ -82,7 +82,7 @@ $( document ).ready(function() {
         authenticity_token: window._token
       }
     }).done(function( data ) {
-      console.log( data );
+      // console.log( data );
       if (data['status'] == 'success'){
         $('#problem-' + id + '-votes-count').text('+' + data['votes_count']);
         $('#problem-' + id + '-votes-count').removeClass('active');
