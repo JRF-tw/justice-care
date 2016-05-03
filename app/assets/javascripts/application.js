@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap
+//= require gtm
 
 $( document ).ready(function() {
   if(window.location.hash) {
