@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   as :user do
+    # get "/users/sign_up" => "devise/registrations#new", as: :new_user_registration_path
     post "/users/sign_in" => "devise/sessions#create", as: :user_session
     delete "/users/sign_out" => "devise/sessions#destroy", as: :destroy_user_session
     post "/users" => "devise/registrations#create", as: :user_registration
