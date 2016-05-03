@@ -44,6 +44,9 @@ zh-TW:
       models:
         user:
           attributes:
+            reset_password_token:
+              blank: "錯誤"
+              invalid: "錯誤"
             password_confirmation:
               confirmation: "兩次輸入不同"
             password:
