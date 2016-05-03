@@ -55,7 +55,7 @@
                 = link_to user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-use-g' do
                   i.fa.fa-google.pr-3
                   | 使用Google
-          = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
+          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
             = render 'shared/error_messages', object: f.object
             fieldset.scheduler-border
               legend.scheduler-border 一般註冊
