@@ -1,11 +1,18 @@
-h2 Change your password
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
-  = f.input :reset_password_token, as: :hidden
-  = f.full_error :reset_password_token
-  .form-inputs
-    = f.input :password, label: "New password", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-    = f.input :password_confirmation, label: "Confirm your new password", required: true
-  .form-actions
-    = f.button :submit, "Change my password"
-= render "users/shared/links"
+.row
+  .col-sm-8.col-sm-offset-2.text-center
+	h2.text-header 變更密碼
+	= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+	  = f.error_notification
+	  = f.input :reset_password_token, as: :hidden
+	  = f.full_error :reset_password_token
+	  .form-group
+	  	label.col-sm-2.control-label 新密碼
+	  	.col-sm-8
+	    = f.input :password, label: false, required: true, autofocus: true, hint: ("密碼請多於 #{@minimum_password_length} 個字元長度" if @minimum_password_length)
+	  .form-group
+	  	label.col-sm-2.control-label 確認新密碼
+	  	.col-sm-8
+	    = f.input :password_confirmation, label: false, required: true
+	  p.text-right
+	    = f.button :submit, "送出", class: "btn btn-list-3"
+	= render "users/shared/links"
