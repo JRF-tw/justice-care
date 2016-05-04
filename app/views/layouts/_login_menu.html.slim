@@ -36,6 +36,7 @@
                 .text-center
                   = f.button :submit, "登入", class: "btn btn-gotalk pr-3"
                   = link_to '忘記密碼', '#get_pw', class: 'btn btn-gotalk', data: {toggle: 'modal'}
+                p ※ 註冊後系統會發出確認信至您的E-mail信箱，登入前請先至您的信箱進行驗證
 
   #sign_up.modal.fade.in
     .modal-dialog
@@ -78,6 +79,7 @@
               .form-group
                 .col-sm-offset-2.col-sm-10
                   = f.button :submit, "註冊", class: "btn btn-gotalk"
+                p ※ 註冊後系統會發出確認信至您的E-mail信箱，登入前請先至您的信箱進行驗證
   #get_pw.modal.fade.in
     .modal-dialog
       .modal-content
