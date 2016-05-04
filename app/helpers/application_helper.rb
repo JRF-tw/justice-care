@@ -21,12 +21,12 @@ module ApplicationHelper
         title: '全民司法改革運動',
         description: '',
         type: 'website',
-        image: "#{Setting.url.protocol}://#{Setting.url.host}/images/fb.jpg",
+        image: "#{Setting.url.protocol}://#{Setting.url.host}/images/fb.png",
         site_name: '全民司法改革運動'
       },
       twitter: {
         card: 'summary_large_image',
-        image: "#{Setting.url.protocol}://#{Setting.url.host}/images/fb.jpg"
+        image: "#{Setting.url.protocol}://#{Setting.url.host}/images/fb.png"
       }
     }
   end
