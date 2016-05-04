@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to step1_path, notice: '成功註冊'
+      redirect_to step1_path(anchor: 'problem'), notice: '成功註冊'
     else
       render :edit
     end

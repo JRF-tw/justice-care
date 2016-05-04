@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   as :user do
-    # get "/users/sign_up" => "devise/registrations#new", as: :new_user_registration_path
+    # get "/users/sign_up" => "devise/registrations#new", as: :new_user_registration
     post "/users/sign_in" => "devise/sessions#create", as: :user_session
     delete "/users/sign_out" => "devise/sessions#destroy", as: :destroy_user_session
     post "/users" => "devise/registrations#create", as: :user_registration
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   match '/step1',    to: 'static_pages#step1',    via: 'get'
   match '/step2',    to: 'static_pages#step2',    via: 'get'
   match '/step3',    to: 'static_pages#step3',    via: 'get'
-  get '/', to: 'static_pages#home', as: :new_user_session
+  match '/', to: 'static_pages#home', anchor: 'login', as: :new_user_session, via: 'get'
 
   resources :users, only: [:update, :edit]
   resources :problems, only: [] do
