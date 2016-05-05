@@ -22,21 +22,24 @@
       span.nobreak 5/4-5/20 問題蒐集
     .well.well-sm
       p.small.lead-text 
-        strong 說明
+        strong 投票說明
       ul
         li.small.lead-text
-          | 司法哪裡有問題？請在你認同的選項前點選
-          i.fa.fa-check-square-o
-          | 符號，選項可以複選。
+          | 為什麼要投票？
+          br
+          | 選出全民認為最迫切需要解套的司法問題，進入第二階段評估成因。
         li.small.lead-text 
-          | 勾選後
+          | 如何操作？
+          br
+          | 點選
           i.fa.fa-check-square-o
-          | 符號欄位將呈現橘色，並會看到最新票數。點選文字描述可閱讀更多的說明。
+          | 後，系統會即時顯示最新票數。點選文字描述可閱讀說明。
         li.small.lead-text 
-          | 如果沒有你認同的選項，可以到論壇中「
+          | 沒有認同的選項？
+          br
+          | 請至論壇「
           = link_to '提出新問題', 'http://talk.justice.care/c/ask', target:'_blank'
-          | 」，說明你看到的司法問題，版主會協助確認問題，寫成一句話，成為正式選項，供你及大家點選。
-        li.small.lead-text 勾選完成後歡迎至論壇進行更多討論。
+          | 」，版主會協助確認問題，整理成選項。
 /! 引言end
 .col-xs-12.col-md-8.col-md-offset-2
   .btn-group.btn-group-sm.pl-64
@@ -80,6 +83,36 @@
 /! 問題清單end
 .col-xs-12
   .col-md-6.col-xs-12.col-md-offset-3
+    p.lead.text-gotalk.text-center
+      | 全面體檢找出台灣司法問題
+      = link_to '確認送出', '#feedback', class: 'btn btn-gotalk', data: {toggle: 'modal'}
+/! 回饋按鈕
+/! 分隔線
+.col-xs-12
+  hr.col-xs-12.row.col-md-8.col-md-offset-2
+/! 分隔線end 
+#feedback.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" 
+            i.fa.fa-times.fa-2
+          h2#feedback.modal-title.text-center 感謝您的投票！
+        .modal-body.small
+          ol
+            li 您可隨時回來站台修改您的投票，活動會在5/20進行最終統計，並且投票結果將進入第二階段分析成因。
+            li 
+              | 對於您認同的選項有更多想法嗎？歡迎至論壇「
+              = link_to '相似經驗分享', 'http://talk.justice.care/c/problems', target: '_blank'
+              」進行更深入的討論。
+            li
+              | 沒有您認同的選項，有更多不一樣的經歷嗎？歡迎至論壇「
+              = link_to '新出新問題', 'http://talk.justice.care/c/ask', target: '_blank'
+              | 」分享更多想法。
+          p.lead.text-gotalk.text-center
+            = link_to '前往論壇', 'http://talk.justice.care/', class: 'btn btn-gotalk', target: '_blank'
+.col-xs-12
+  .col-md-6.col-xs-12.col-md-offset-3
     h1.text-header.text-center
       span.nobreak 第一階段：
       span.nobreak 健康檢查
@@ -93,12 +126,6 @@
       | 蒐集問題的日期從05/04開始，到05/20為一個階段。05/20之後，蒐集問題的平台並
       strong 不會停止運作
       | ，仍然會繼續開放留言，但第二階段的評估範圍還是會以05/20之前蒐集到的問題為優先處理的對象。
-.col-xs-12
-  .col-md-6.col-xs-12.col-md-offset-3
-    p.lead.text-gotalk
-      | 有更多不一樣的經歷？
-      span.nobreak 請告訴我們
-      = link_to '分享經歷', 'http://talk.justice.care/c/ask', target: '_blank', class: 'btn btn-gotalk'
 .col-xs-12
   .col-md-8.col-xs-12.col-md-offset-2
     .col-sm-6.pull-left
