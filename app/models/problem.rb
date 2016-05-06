@@ -31,8 +31,8 @@ class Problem < ActiveRecord::Base
   end
 
   def sync_votes_count
-    total_votes_cache = count_total_votes
-    recently_votes_cache = count_recently_votes
-    save!
+    self.total_votes_cache = count_total_votes
+    self.recently_votes_cache = count_recently_votes
+    self.save!
   end
 end
