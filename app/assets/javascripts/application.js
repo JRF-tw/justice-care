@@ -63,6 +63,16 @@ $( document ).ready(function() {
         $('#problem-' + id + '-vote').addClass( "active unvote" );
         $('#problem-' + id + '-vote').unbind('click');
         $('#problem-' + id + '-vote').click(unvote_problem);
+      } else if (data['voted'] === true) {
+        // reset the vote state
+        $('#problem-' + id + '-votes-count').text('+' + data['votes_count']);
+        $('#problem-' + id + '-votes-count').addClass('active');
+        $('#problem-' + id + '-votes-count').unbind('click');
+        $('#problem-' + id + '-votes-count').click(unvote_problem);
+        $('#problem-' + id + '-vote').removeClass( "vote" );
+        $('#problem-' + id + '-vote').addClass( "active unvote" );
+        $('#problem-' + id + '-vote').unbind('click');
+        $('#problem-' + id + '-vote').click(unvote_problem);
       }
     });
 
@@ -84,6 +94,16 @@ $( document ).ready(function() {
     }).done(function( data ) {
       // console.log( data );
       if (data['status'] == 'success'){
+        $('#problem-' + id + '-votes-count').text('+' + data['votes_count']);
+        $('#problem-' + id + '-votes-count').removeClass('active');
+        $('#problem-' + id + '-votes-count').unbind('click');
+        $('#problem-' + id + '-votes-count').click(vote_problem);
+        $('#problem-' + id + '-vote').removeClass( "active unvote" );
+        $('#problem-' + id + '-vote').addClass( "vote" );
+        $('#problem-' + id + '-vote').unbind('click');
+        $('#problem-' + id + '-vote').click(vote_problem);
+      } else if (data['voted'] === false) {
+        // reset the vote state
         $('#problem-' + id + '-votes-count').text('+' + data['votes_count']);
         $('#problem-' + id + '-votes-count').removeClass('active');
         $('#problem-' + id + '-votes-count').unbind('click');
