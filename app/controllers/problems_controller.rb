@@ -2,19 +2,21 @@ class ProblemsController < ApplicationController
   before_action :set_problem
   def vote
     if current_user
-      puts current_user.to_json
-      puts @problem.to_json
+      # puts current_user.to_json
+      # puts @problem.to_json
       vote = Vote.where(problem_id: @problem.id).where(user_id: current_user.id).first
       if vote.blank?
         vote = Vote.create(problem_id: @problem.id, user_id: current_user.id)
+        @problem.reload
         render json: {
-          votes_count: @problem.votes_count,
+          votes_count: @problem.total_votes_cache,
           voted: true,
           status: 'success'
         }
       else
+        @problem.reload
         render json: {
-          votes_count: @problem.votes_count,
+          votes_count: @problem.total_votes_cache,
           voted: true,
           message: 'already voted',
           status: 'failed'
@@ -22,7 +24,7 @@ class ProblemsController < ApplicationController
       end
     else
       render json: {
-        votes_count: @problem.votes_count,
+        votes_count: @problem.total_votes_cache,
         message: 'not log in',
         status: 'failed'
       }
@@ -34,14 +36,16 @@ class ProblemsController < ApplicationController
       vote = Vote.where("problem_id = #{@problem.id}").where("user_id = #{current_user.id}").first
       if vote.present?
         vote.destroy
+        @problem.reload
         render json: {
-          votes_count: @problem.votes_count,
+          votes_count: @problem.total_votes_cache,
           voted: false,
           status: 'success'
         }
       else
+        @problem.reload
         render json: {
-          votes_count: @problem.votes_count,
+          votes_count: @problem.total_votes_cache,
           voted: false,
           message: 'vote not found',
           status: 'failed'
@@ -49,7 +53,7 @@ class ProblemsController < ApplicationController
       end
     else
       render json: {
-        votes_count: @problem.votes_count,
+        votes_count: @problem.total_votes_cache,
         message: 'not log in',
         status: 'failed'
       }
