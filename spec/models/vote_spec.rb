@@ -1,5 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Vote, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Vote do
+  let(:vote) {FactoryGirl.create(:vote)}
+
+  it "#factory_creat_success" do
+    expect {
+      FactoryGirl.create :vote
+    }.to change { Vote.count }.by(1)
+  end
 end

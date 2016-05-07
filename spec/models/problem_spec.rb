@@ -1,5 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Problem, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Problem do
+  let(:problem) {FactoryGirl.create(:problem)}
+
+  it "#factory_creat_success" do
+    expect {
+      FactoryGirl.create :problem
+    }.to change { Problem.count }.by(1)
+  end
 end

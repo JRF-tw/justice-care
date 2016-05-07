@@ -4,7 +4,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "person_#{n}_#{rand(1000).to_s}@example.com"}
     password "P@ssw0rd"
     password_confirmation "P@ssw0rd"
-    admin      false
+    admin false
 
     after :create do |user|
       user.confirmed_at = Time.now
@@ -17,7 +17,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "Admin_#{n}_#{rand(1000).to_s}@example.com"}
     password "P@ssw0rd"
     password_confirmation "P@ssw0rd"
-    admin      true
+    admin true
 
     after :create do |admin|
       admin.confirmed_at = Time.now
