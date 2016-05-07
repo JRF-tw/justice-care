@@ -11,10 +11,10 @@
             legend.scheduler-border 快速通關
             .form-group
               .col-sm-12.text-center
-                = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-use-fb' do
+                = link_to user_facebook_omniauth_authorize_path, class: 'btn btn-use-fb' do
                   i.fa.fa-facebook.pr-3
                   | 使用Facebook
-                = link_to user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-use-g' do
+                = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-use-g' do
                   i.fa.fa-google.pr-3
                   | 使用Google
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
@@ -50,10 +50,10 @@
             legend.scheduler-border 快速通關
             .form-group
               .col-sm-12.text-center
-                = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-use-fb' do
+                = link_to user_facebook_omniauth_authorize_path, class: 'btn btn-use-fb' do
                   i.fa.fa-facebook.pr-3
                   | 使用Facebook
-                = link_to user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-use-g' do
+                = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-use-g' do
                   i.fa.fa-google.pr-3
                   | 使用Google
           = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
