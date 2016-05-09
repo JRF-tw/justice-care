@@ -20,6 +20,7 @@ class StaticPagesController < ApplicationController
     else
       @problems = Problem.lastest_order.page(params[:page])
     end
+    @users_count = User.all.count
     set_meta_tags({
       title: '健康檢查',
       description: '你心中重要的問題是什麼？來投票吧！',
