@@ -61,21 +61,21 @@
             fieldset.scheduler-border
               legend.scheduler-border 一般註冊
               .form-group
-                label.col-sm-2.control-label for="user[email]"  E-mail
+                label.col-sm-2.control-label for="user[email]" E-mail
                 .col-sm-8
                   = f.input :email, required: true, autofocus: true, label: false, placeholder: 'email', html: {class: 'form-control'}
               .form-group
-                label.col-sm-2.control-label for="user[password]"  密碼
+                label.col-sm-2.control-label for="user[password]" 密碼
                 .col-sm-8
                   = f.input :password, required: true, label: false, placeholder: 'password', html: {class: 'form-control'}
               .form-group
-                label.col-sm-2.control-label for="user[password_confirmation]"  確認密碼
+                label.col-sm-2.control-label for="user[password_confirmation]" 確認密碼
                 .col-sm-8
                   = f.input :password_confirmation, required: true, label: false, html: {class: 'form-control'}
               .form-group
                 .col-sm-offset-2.col-sm-10
                   label
-                    = f.input :is_legal_profession, label: '具法律背景'
+                    = f.input :is_legal_profession, label: '我有法律背景'
               .form-group
                 .col-sm-offset-2.col-sm-10
                   = f.button :submit, "註冊", class: "btn btn-gotalk"
