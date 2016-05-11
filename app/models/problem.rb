@@ -27,7 +27,7 @@ class Problem < ActiveRecord::Base
   end
 
   def count_recently_votes
-    votes.where("created_at > ?", 2.weeks.ago.midnight).count + add
+    votes.where("created_at > ?", 5.days.ago.midnight).count + add
   end
 
   def sync_votes_count
