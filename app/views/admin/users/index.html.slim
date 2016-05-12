@@ -38,5 +38,5 @@
               = simple_form_for user, url: admin_user_path(user), method: :put do |f|
                 = f.input :admin, as: :hidden, :input_html => { :value => 1 }
                 = f.button :submit, "授與管理權限"
-    .text-center
-      = paginate @users
+  .text-center
+    = paginate @users
