@@ -1,6 +1,9 @@
 .container.col-lg-10.col-lg-offset-1
   /! 內容
   h1.text-center 後台使用者
+  = search_form_for @q, url: admin_users_path do |f|
+    = f.search_field :email_cont
+    = f.submit
   table.table.table-striped
     thead
       tr
@@ -35,3 +38,5 @@
               = simple_form_for user, url: admin_user_path(user), method: :put do |f|
                 = f.input :admin, as: :hidden, :input_html => { :value => 1 }
                 = f.button :submit, "授與管理權限"
+    .text-center
+      = paginate @users
