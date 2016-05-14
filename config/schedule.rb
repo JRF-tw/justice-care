@@ -19,7 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
-env :PATH, ENV['PATH']
+# env :PATH, ENV['PATH']
+env :PATH, '/usr/local/rvm/gems/ruby-2.2-head/bin:/usr/local/rvm/gems/ruby-2.2-head@global/bin:/usr/local/rvm/rubies/ruby-2.2-head/bin:/usr/local/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/rvm/bin'
 
 set :output, 'log/cron.log'
 
