@@ -19,7 +19,7 @@ class Problem < ActiveRecord::Base
   }
 
   scope :votes_order_before_520, -> {
-    where("created_at < ?", '2016-05-20'.to_datetime).order(total_520_votes_cache: desc).order(id: :asc)
+    where("created_at < ?", '2016-05-20'.to_datetime).order(total_520_votes_cache: :desc).order(id: :asc)
   }
 
   def is_voted?(user)
