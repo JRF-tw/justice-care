@@ -18,6 +18,10 @@ class Problem < ActiveRecord::Base
     order(total_votes_cache: :desc).order(id: :asc)
   }
 
+  scope :votes_order_before_520, -> {
+    where("created_at < ?", '2016-05-20'.to_datetime).order(total_520_votes_cache: desc).order(id: :asc)
+  }
+
   def is_voted?(user)
     return users.include? user
   end
@@ -30,9 +34,14 @@ class Problem < ActiveRecord::Base
     votes.where("created_at > ?", 5.days.ago.midnight).count + add
   end
 
+  def count_520_votes
+    votes.where("created_at < ?", '2016-05-20'.to_datetime ).count + add
+  end
+
   def sync_votes_count
     self.total_votes_cache = count_total_votes
     self.recently_votes_cache = count_recently_votes
+    self.total_520_votes_cache = count_520_votes
     self.save!
   end
 end

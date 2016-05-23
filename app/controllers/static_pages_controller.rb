@@ -17,6 +17,8 @@ class StaticPagesController < ApplicationController
       @problems = Problem.hot_order.page(params[:page])
     elsif params[:sort] == 'votes'
       @problems = Problem.votes_order.page(params[:page])
+    elsif params[:sort] == '520votes'
+      @problems = Problem.votes_order_before_520.page(params[:page])
     else
       @problems = Problem.lastest_order.page(params[:page])
     end
