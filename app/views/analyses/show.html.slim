@@ -4,9 +4,9 @@
     table
       tr
         td
-          span.foreword.pr-10 @analysis.id
+          span.foreword.pr-10 = @analysis.id
         td
-          h1.text-header @analysis.title
+          h1.text-header = @analysis.title
 /! 心智圖
 .col-xs-12.col-md-8.col-md-offset-2
   .well.well-sm.small
@@ -43,6 +43,6 @@
 .col-xs-12
   .col-md-8.col-xs-12.col-md-offset-2
     h2.text-header.pull-right
-      = link_to step2_path, anchor: 'problem' do
+      = link_to step2_path, anchor: 'analyses' do
         i.fa.fa-arrow-left.pr-5
         | 返回列表

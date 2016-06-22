@@ -1,4 +1,4 @@
-class AnalysissController < ApplicationController
+class AnalysesController < ApplicationController
   before_action :set_analysis
   def show
   end
