@@ -3,7 +3,9 @@
 .form-group
   = f.input :content, as: :text, label: '問題', required: true, input_html: { class: 'form-control redactor', row: '5' }
 .form-group
-  = f.input :link, label: '論壇連結', required: true, input_html: { class: 'form-control' }
+  = f.input :discourse_url, label: '論壇連結', required: true, input_html: { class: 'form-control' }
+.form-group
+  = f.input :kind, label: "狀態", collection: [['第一階段', 'step1'], ['第二階段', 'step2'], ['第三階段', 'step3']], input_html: { class: 'form-control' }, include_blank: false
 .form-group
   = f.input :add, label: '外加票數', input_html: { class: 'form-control' }
 = f.submit '儲存', input_html: { class: 'btn btn-default' }

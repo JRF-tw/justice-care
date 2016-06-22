@@ -15,7 +15,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap
+//= require chosen-jquery
 //= require redactor-rails/redactor.min
 //= require redactor-rails/plugins
 //= require redactor-rails/langs/zh_tw
 //= require redactor-rails/app_config
+
+$( document ).ready(function() {
+  if (ready_ran == 1){
+    return;
+  }else{
+    ready_ran = 1;
+  }
+  $('.chosen-select').chosen({
+    search_contains: true,
+    allow_single_deselect: true,
+    no_results_text: 'No results matched',
+    width: '400px'
+  });
+  $(".chosen-select").trigger('chosen:updated');
+});

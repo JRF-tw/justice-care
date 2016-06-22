@@ -1,0 +1,48 @@
+/! 標題
+.col-xs-12
+  .col-xs-12.col-md-6.col-md-offset-3
+    table
+      tr
+        td
+          span.foreword.pr-10 @analysis.id
+        td
+          h1.text-header @analysis.title
+/! 心智圖
+.col-xs-12.col-md-8.col-md-offset-2
+  .well.well-sm.small
+    p
+      strong 如何瀏覽心智圖
+    ul
+      li 可使用滑鼠移動瀏覽心智圖
+      li 點選左下「＋/－」可放大／縮小
+      li 點選右下方「全螢幕」圖示可另開視窗瀏覽
+  - if @analysis.mindmap_url.present?
+    iframe allowfullscreen="" frameborder="0" height="500" src="#{@analysis.mindmap_url}" width="100%" 
+      | 您的瀏覽器不支援此內嵌視窗，請
+      = link_to '點此開啓心智圖', @analysis.mindmap_url, target: '_blank'
+      br
+      | Your browser does not support frames. View this
+      = link_to 'mind map', @analysis.mindmap_url, target: '_blank'
+      | on its original site. It was created using
+      = link_to 'Mindomo', @analysis.mindmap_url, target: '_blank'
+      | mind mapping software.
+/! 心智圖end
+/! 分析報告
+.col-xs-12.col-md-8.col-md-offset-2
+  h1.text-header.text-center 分析報告
+  = @analysis.content.try :html_safe
+/! 分隔線
+.col-xs-12
+  hr.col-xs-12.row.col-md-8.col-md-offset-2
+/! 分隔線end
+.col-xs-12
+  .col-md-8.col-xs-12.col-md-offset-2
+    p.lead.text-gotalk
+      | 對分析有更多想法？
+      = link_to '一起來討論', @analysis.discourse_url, class: 'btn btn-gotalk', target: '_blank'
+.col-xs-12
+  .col-md-8.col-xs-12.col-md-offset-2
+    h2.text-header.pull-right
+      = link_to step2_path, anchor: 'problem' do
+        i.fa.fa-arrow-left.pr-5
+        | 返回列表

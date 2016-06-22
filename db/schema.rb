@@ -11,21 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523073015) do
+ActiveRecord::Schema.define(version: 20160622071414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "analyses", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "content"
+    t.string   "mindmap_url"
+    t.string   "youtube_url"
+    t.string   "youtube_id"
+    t.string   "discourse_url"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "analyses_problems", force: :cascade do |t|
+    t.integer "analysis_id", null: false
+    t.integer "problem_id",  null: false
+  end
+
+  add_index "analyses_problems", ["analysis_id", "problem_id"], name: "index_analyses_problems_on_analysis_id_and_problem_id", unique: true, using: :btree
+
   create_table "problems", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.string   "link"
-    t.integer  "add",                   default: 0, null: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.string   "discourse_url"
+    t.integer  "add",                   default: 0,       null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.integer  "total_votes_cache",     default: 0
     t.integer  "recently_votes_cache",  default: 0
     t.integer  "total_520_votes_cache", default: 0
+    t.string   "status",                default: "step1"
   end
 
   create_table "redactor_assets", force: :cascade do |t|

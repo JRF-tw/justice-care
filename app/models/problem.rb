@@ -1,6 +1,7 @@
 class Problem < ActiveRecord::Base
   has_many :votes
   has_many :users, -> { uniq }, through: :votes
+  has_and_belongs_to_many :analyses, -> { uniq }
   paginates_per 15
 
   scope :hot_order, -> {
@@ -20,6 +21,10 @@ class Problem < ActiveRecord::Base
 
   scope :votes_order_before_520, -> {
     where("created_at < ?", '2016-05-21'.to_datetime).order(total_520_votes_cache: :desc).order(id: :asc)
+  }
+
+  scope :step2, -> {
+    where(status: 'step2').votes_order
   }
 
   def is_voted?(user)

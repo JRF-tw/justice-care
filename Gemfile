@@ -44,6 +44,8 @@ gem "mini_magick"
 gem "rails-i18n"
 gem 'whenever', require: false
 gem 'canonical-rails', github: 'jumph4x/canonical-rails'
+gem 'compass-rails'
+gem 'chosen-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

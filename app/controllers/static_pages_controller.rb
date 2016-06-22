@@ -36,6 +36,7 @@ class StaticPagesController < ApplicationController
   end
 
   def step2
+    @analyses = Analysis.order(id: :asc).page(params[:page])
     set_meta_tags({
       title: '評估體能',
       description: '評估問題背後的成因',

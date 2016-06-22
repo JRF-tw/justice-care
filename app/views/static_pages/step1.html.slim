@@ -163,6 +163,6 @@
           .modal-body.small
             = problem.content.try :html_safe
             p.text-right
-              = link_to '更多討論', problem.link, class: 'btn btn-list-3', target: '_blank'
+              = link_to '更多討論', problem.discourse_url, class: 'btn btn-list-3', target: '_blank'
 
   

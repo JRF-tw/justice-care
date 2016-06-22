@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   match '/step2',    to: 'static_pages#step2',    via: 'get'
   match '/step3',    to: 'static_pages#step3',    via: 'get'
   match '/', to: 'static_pages#home', anchor: 'login', as: :new_user_session, via: 'get'
+  resources :analyses, only: [:show]
 
   resources :users, only: [:update, :edit]
   resources :problems, only: [] do
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
     get '/', to: redirect('/admin/problems')
     resources :problems
     resources :users, only: [:index, :update]
+    resources :analyses
   end
 
   # root 'welcome#index'
