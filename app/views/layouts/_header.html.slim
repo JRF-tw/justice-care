@@ -26,7 +26,7 @@
           | 第一階段
           br
           | 健康檢查
-      - if params[:action] == 'step2'
+      - if params[:action] == 'step2' or params[:controller] == 'analyses'
         = link_to step2_path, class: 'btn btn-step active pr-5' do
           | 第二階段
           br

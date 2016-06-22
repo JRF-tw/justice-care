@@ -22,11 +22,6 @@
 //= require redactor-rails/app_config
 
 $( document ).ready(function() {
-  if (ready_ran == 1){
-    return;
-  }else{
-    ready_ran = 1;
-  }
   $('.chosen-select').chosen({
     search_contains: true,
     allow_single_deselect: true,
