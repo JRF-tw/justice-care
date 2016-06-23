@@ -34,7 +34,7 @@
     table.table-bordered.table-list
       - @analyses.each do |analysis|
         tr
-          td.list-nbr = analysis.id
+          td.list-nbr = analysis.no
           td.list.lead
             = link_to analysis.title, analysis_path(analysis), class: 'pl-5'
     .text-center

@@ -1,6 +1,8 @@
 .form-group
   = f.input :title, label: '分析標題', required: true, input_html: { class: 'form-control' }
 .form-group
+  = f.input :no, label: '分析編號', required: true, input_html: { class: 'form-control' }
+.form-group
   = f.association :problems, label: "相關問題", collection: Problem.all, input_html: { class: 'chosen-select form-control' }
 .form-group
   = f.input :discourse_url, label: '論壇連結', required: true, input_html: { class: 'form-control' }
