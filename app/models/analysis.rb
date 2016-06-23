@@ -1,7 +1,10 @@
 class Analysis < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_and_belongs_to_many :problems, -> { uniq }
+  has_many :reports
+  accepts_nested_attributes_for :reports, reject_if: proc { |attributes| attributes['content'].blank? }, allow_destroy: true
   paginates_per 15
+  default_scope { order(no: :asc) }
 
   before_save :update_youtube_values
 
