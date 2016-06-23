@@ -61,7 +61,7 @@ class Admin::AnalysesController < Admin::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def analysis_params
-    params.require(:analysis).permit(:title, :content, :image, :discourse_url, :mindmap_url, :no
+    params.require(:analysis).permit(:title, :content, :image, :discourse_url, :mindmap_url, :no,
       :youtube_url, :image, :image_cache, :remove_image, {problem_ids: []})
   end
 end
