@@ -19,7 +19,7 @@
     /! pagination start
     /! to雨蒼:顯示15則
     = paginate @reports
-  = link_to '回到分析', admin_analysis_path(@analysis)
-  = link_to '新增報告', new_admin_analysis_report_path(@analysis)
+  = link_to '回到分析', admin_analysis_path(@analysis), class: "btn btn-default"
+  = link_to '新增報告', new_admin_analysis_report_path(@analysis), class: "btn btn-default"
 /! 登入
 

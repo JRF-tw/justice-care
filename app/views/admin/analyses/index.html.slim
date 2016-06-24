@@ -14,7 +14,7 @@
             .btn-group.btn-group-sm
             = link_to '編輯', edit_admin_analysis_path(analysis), class: "btn btn-default"
             = link_to '刪除', admin_analysis_path(analysis), method: :delete, data: { confirm: '確認要刪除嗎？' }, class: "btn btn-default"
-            = link_to '編輯報告', admin_analysis_reports_path(analysis)
+            = link_to '編輯報告', admin_analysis_reports_path(analysis), class: "btn btn-default"
   /! 內容end
   .text-center
     /! pagination start
