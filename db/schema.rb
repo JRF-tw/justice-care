@@ -66,8 +66,14 @@ ActiveRecord::Schema.define(version: 20160623094538) do
   add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type", using: :btree
 
   create_table "reports", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "analysis_id"
+    t.string   "title"
+    t.integer  "no",            default: 0
+    t.string   "discourse_url"
+    t.string   "mindmap_url"
+    t.text     "content"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|

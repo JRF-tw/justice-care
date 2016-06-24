@@ -1,7 +1,7 @@
 .container.col-lg-8.col-lg-offset-2
   /! 內容
   h1.text-center 新增分析
-  = simple_form_for @analysis, url: admin_analyses_path, class: 'form-horizontal' do |f|
+  = simple_form_for @report, url: admin_analysis_reports_path(@analysis), class: 'form-horizontal' do |f|
     = render :partial => 'form', :locals => { :f => f }
   /! 內容end
 /! 登入

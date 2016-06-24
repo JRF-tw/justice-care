@@ -2,6 +2,7 @@ class Problem < ActiveRecord::Base
   has_many :votes
   has_many :users, -> { uniq }, through: :votes
   has_and_belongs_to_many :analyses, -> { uniq }
+  has_many :reports, through: :analyses
   paginates_per 15
 
   scope :hot_order, -> {

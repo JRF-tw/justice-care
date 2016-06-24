@@ -28,10 +28,27 @@
       | mind mapping software.
 /! 心智圖end
 /! 分析報告
+
 .col-xs-12.col-md-8.col-md-offset-2
   h1.text-header.text-center 分析報告
-  = @analysis.content.try :html_safe
-/! 分隔線
+  - if @analysis.reports.present?
+    ul.nav.nav-tabs.pb-10#reports
+      - @analysis.reports.each do |report|
+        - unless report == @analysis.reports.last
+          li
+            = link_to report.title, "#report-#{report.id}", data: {toggle: 'tab'}
+        - else
+          li.active
+            = link_to report.title, "#report-#{report.id}", data: {toggle: 'tab'}
+    .tab-content#reportsContent
+      - @analysis.reports.each do |report|
+        - unless report == @analysis.reports.last
+          .tab-pane.fade.in id="report-#{report.id}"
+            = report.content.try :html_safe
+        - else
+          .tab-pane.fade.in.active id="report-#{report.id}"
+            = report.content.try :html_safe
+
 .col-xs-12
   hr.col-xs-12.row.col-md-8.col-md-offset-2
 /! 分隔線end

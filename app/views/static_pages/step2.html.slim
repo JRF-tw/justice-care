@@ -28,17 +28,21 @@
   hr.col-xs-12.row.col-md-8.col-md-offset-2
 /! 分隔線end
 /! 問題清單
-- unless @analyses.blank?
+- unless @problems.blank?
   .col-xs-12.col-md-8.col-md-offset-2#analyses
-    h1#list.text-header.text-center 分析列表
+    h1#list.text-header.text-center 分析中問題列表
     table.table-bordered.table-list
-      - @analyses.each do |analysis|
-        tr
-          td.list-nbr = analysis.no
-          td.list.lead
-            = link_to analysis.title, analysis_path(analysis), class: 'pl-5'
+      - @problems.each do |problem|
+        - if problem.analyses.length == 1
+          tr
+            td.list.lead
+              = link_to problem.title, analysis_path(problem.analyses.first), class: 'pl-5'
+        - elsif  problem.analyses.length > 1
+          tr
+            td.list.lead
+              = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
     .text-center
-      = paginate @analyses
+      = paginate @problems
   /! 問題清單end
   /! 分隔線
   .col-xs-12
@@ -71,3 +75,24 @@
         = link_to step3_path do
           | 訓練項目
           i.fa.fa-arrow-right.pl-5
+- @problems.each do |problem|
+  - if problem.analyses.length > 1
+    .modal.fade.in id="problem-#{problem.id}"
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+            h2.modal-title.text-center 分析報告
+          .modal-body.small
+            table.table
+              thead
+                tr
+                  th colspan="2"  標題
+              tbody
+                - problem.analyses.each do |analysis|
+                  tr
+                    td = analysis.title
+                    td
+                      = link_to '閱讀分析', analysis_path(analysis), class: 'btn btn-list-3', role: 'button'
+
+

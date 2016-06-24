@@ -1,5 +1,5 @@
 class Admin::ReportsController < Admin::BaseController
-  before_filter :find_analysis
+  before_action :find_analysis
   before_action :set_report, except: [:index, :new, :sort]
 
   # GET /reports
@@ -32,7 +32,7 @@ class Admin::ReportsController < Admin::BaseController
   # POST /reports
   def create
     if @report.save
-      redirect_to admin_reports_url, notice: '報告建立成功'
+      redirect_to admin_analysis_reports_url, notice: '報告建立成功'
     else
       render :new
     end
@@ -41,7 +41,7 @@ class Admin::ReportsController < Admin::BaseController
   # PATCH/PUT /reports/1
   def update
     if @report.update(report_params)
-      redirect_to admin_reports_url, notice: '報告更新成功'
+      redirect_to admin_analysis_reports_url, notice: '報告更新成功'
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class Admin::ReportsController < Admin::BaseController
   # DELETE /reports/1
   def destroy
     @report.destroy
-    redirect_to admin_reports_url, notice: '報告已刪除'
+    redirect_to admin_analysis_reports_url, notice: '報告已刪除'
   end
 
   private
@@ -66,7 +66,6 @@ class Admin::ReportsController < Admin::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def report_params
-    params.require(:report).permit(:analysis_id, :title, :content, :image, :discourse_url, :mindmap_url, :no,
-      :youtube_url, :image, :image_cache, :remove_image, {problem_ids: []})
+    params.require(:report).permit(:analysis_id, :title, :content, :no, :discourse_url, :mindmap_url)
   end
 end
