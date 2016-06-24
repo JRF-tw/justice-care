@@ -3,7 +3,7 @@ class Analysis < ActiveRecord::Base
   has_and_belongs_to_many :problems, -> { uniq }
   has_many :reports
   paginates_per 15
-  default_scope { order(no: :asc) }
+  default_scope { order(no: :asc).order(id: :asc) }
 
   before_save :update_youtube_values
 
