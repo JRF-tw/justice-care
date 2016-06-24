@@ -66,23 +66,38 @@
           td.list.lead
             span.nbr-check id="problem-#{problem.id}-votes-count" +#{problem.total_520_votes_cache}
             a data-toggle="modal" href="#problem-#{problem.id}" = problem.title
+            - if problem.status == 'step2'
+              = link_to step2_path, anchor: 'analyses' do
+                span.label.label-default.text-right 分析中
         - else
           - if current_user
             - if problem.is_voted?(current_user)
               td = link_to '', 'javascript:void(0)', class: 'btn btn-check unvote active', data: {id: problem.id}, id: "problem-#{problem.id}-vote"
               td.list.lead
                 span.nbr-check.active id="problem-#{problem.id}-votes-count" +#{problem.total_votes_cache}
-                a data-toggle="modal" href="#problem-#{problem.id}" = problem.title
+                = link_to problem.title, "#problem-#{problem.id}", data: {toggle: 'modal'}
+                - if problem.status == 'step2'
+                  | &nbsp;
+                  = link_to step2_path(anchor: 'analyses') do
+                    span.label.label-default.text-right 分析中
             - else
               td = link_to '', 'javascript:void(0)', class: 'btn btn-check vote', data: {id: problem.id}, id: "problem-#{problem.id}-vote"
               td.list.lead
                 span.nbr-check id="problem-#{problem.id}-votes-count" +#{problem.total_votes_cache}
-                a data-toggle="modal" href="#problem-#{problem.id}" = problem.title
+                = link_to problem.title, "#problem-#{problem.id}", data: {toggle: 'modal'}
+                - if problem.status == 'step2'
+                  | &nbsp;
+                  = link_to step2_path(anchor: 'analyses') do
+                    span.label.label-default.text-right 分析中
           - else
             td = link_to '', '#log_in', class: 'btn btn-check', data: {id: problem.id}, onclick: "$('#log_in').modal('show');", id: "problem-#{problem.id}-vote"
             td.list.lead
               span.nbr-check id="problem-#{problem.id}-votes-count" +#{problem.total_votes_cache}
-              a data-toggle="modal" href="#problem-#{problem.id}" = problem.title
+              = link_to problem.title, "#problem-#{problem.id}", data: {toggle: 'modal'}
+              - if problem.status == 'step2'
+                | &nbsp;
+                = link_to step2_path(anchor: 'analyses') do
+                  span.label.label-default.text-right 分析中
   .text-center
     = paginate @problems
   /! 分頁end
