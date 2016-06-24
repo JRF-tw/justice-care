@@ -43,14 +43,16 @@
       - @problems.each do |problem|
         - if problem.analyses.length == 1
           tr
+            td.list-nbr = problem.total_votes_cache
             td.list.lead
               = link_to problem.title, analysis_path(problem.analyses.first), class: 'pl-5'
         - elsif  problem.analyses.length > 1
           tr
+            td.list-nbr = problem.total_votes_cache
             td.list.lead
               = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
     .text-center
-      = paginate @analyses
+      = paginate @problems
 /! 問題清單end
 .col-xs-12
   .col-xs-12.col-md-8.col-md-offset-2
@@ -108,22 +110,22 @@
                       = link_to '閱讀分析', analysis_path(analysis), class: 'btn btn-list-3', role: 'button'
 
 
- #record0614.modal.fade.in
-    .modal-dialog
-      .modal-content
-        .modal-header
-          button.close aria-hidden="true" data-dismiss="modal" type="button" ×
-          h2#sign_up.modal-title.text-center 會議紀錄
-        .modal-body.small
-          .embed-responsive.embed-responsive-16by9
-            iframe.embed-responsive-item src="//www.youtube.com/embed/ues3hOon-Hc"
+#record0614.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+        h2#sign_up.modal-title.text-center 會議紀錄
+      .modal-body.small
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item src="//www.youtube.com/embed/ues3hOon-Hc"
 
- #record0621.modal.fade.in
-    .modal-dialog
-      .modal-content
-        .modal-header
-          button.close aria-hidden="true" data-dismiss="modal" type="button" ×
-          h2#sign_up.modal-title.text-center 會議紀錄
-        .modal-body.small
-          .embed-responsive.embed-responsive-16by9
-            iframe.embed-responsive-item src="//www.youtube.com/embed/bFcR1AkI0XM"
+#record0621.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+        h2#sign_up.modal-title.text-center 會議紀錄
+      .modal-body.small
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item src="//www.youtube.com/embed/bFcR1AkI0XM"
