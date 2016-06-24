@@ -23,14 +23,22 @@
     p 在完成了第一階段的司法健康檢查，發現了司法的問題後，接著我們就要進行「體能評估」。
     p 就如同「體能評估」是為了瞭解體能表現不佳，背後所代表的身體機能狀況一樣，這個階段的目標是分析不同人感受到的司法問題，它背後可能的「成因」是什麼。例如：民眾覺得司法問題是「判決與人民期待有落差」，那我們就要來分析，這個問題的成因，是法律規定有問題？還是法官的經驗與人民有差異？還是因為檢察官提供的證據有問題？還是媒體的報導引起誤會等…。
     = image_tag('bird-3.png', class: 'center-block', width: '30%')
-/! 分隔線
+  /! 分隔線
+  .col-xs-12
+    hr.col-xs-12.row.col-md-8.col-md-offset-2
+  /! 分隔線end
 .col-xs-12
-  hr.col-xs-12.row.col-md-8.col-md-offset-2
-/! 分隔線end
+  .col-xs-12.col-md-8.col-md-offset-2
+    h1.text-header.text-center
+      span.nobreak 第二階段：
+      span.nobreak 體能評估
+    p 為讓評估會議有效率的進行，我們會事先組成工作小組，試擬成因分析並整理網站討論意見，之後送評估會議參考討論。工作小組成因分析的報告格式說明，請點選此處。
+    
 /! 問題清單
 - unless @problems.blank?
   .col-xs-12.col-md-8.col-md-offset-2#analyses
-    h1#list.text-header.text-center 分析中問題列表
+    p
+      span#list.foreword 問題評估報告
     table.table-bordered.table-list
       - @problems.each do |problem|
         - if problem.analyses.length == 1
@@ -42,22 +50,26 @@
             td.list.lead
               = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
     .text-center
-      = paginate @problems
-  /! 問題清單end
-  /! 分隔線
-  .col-xs-12
-    hr.col-xs-12.row.col-md-8.col-md-offset-2
-  /! 分隔線end
+      = paginate @analyses
+/! 問題清單end
 .col-xs-12
-  .col-xs-12.col-md-6.col-md-offset-3
-    h1.text-header.text-center
-      span.nobreak 第二階段：
-      span.nobreak 體能評估會議
-    p 因為要了解人們感受到的司法問題，背後可能的成因，這無法只靠一般民眾的感受，所以這一階段會有專家來協助作成因分析。專家組成包括，審、檢、辯、法學及非法學的學者、民間團體代表。而為了避免法律專業人士過度專業化的討論，製造參與的門檻，也為了避免法律專業人士陷入自己的專業盲點，協助作成因分析的專家，非法律背景者會超過半數。此外，我們也會邀請積極參與網路討論，持續發表高品質言論的民眾來參與7/2及7/9的評估會議！
-    p.text-center.row
-      = image_tag('bar.png', width: '100%')
-    p 為讓評估會議有效率的進行，我們會事先組成工作小組，在第一階段截止（5/20）後，每2週至少一次聚會整理網站收集來的原始資料，並且試擬成因分析後送給評估會議討論。工作小組的聚會時間、參與方式及討論資料會公布在網站上。如果民眾對於工作小組所試擬的成因分析有想法或不同意見，也歡迎民眾於線上留言討論。
-    p 評估會議暫訂於7/2、7/9兩天（確定時間與地點會公佈在本網站）。與會議相關的書面資料，會在評估會議前公開上網，方便查閱。
+  .col-xs-12.col-md-8.col-md-offset-2
+    p 工作小組的成員，主要是司改會對於全民司改運動相關議題有參與意願的成員。我們會公佈成因分析報告人的姓名和簡單介紹，以及歷次會議參與者的姓名與簡介，以受公開檢視。不過因為有些司法問題的分析，必須是利害關係人才會知道真正的情況，在這種情況下，我們會去訪問利害關係人，但不會公開他們是誰，因為一旦公開很可能會對他們造成傷害，例如現職的警察提供關於警察不法的觀察意見。
+    p
+    | 為讓評估會議有效率的進行，我們會事先組成工作小組，在第一階段截止（5/20）後，每2週至少一次聚會整理網站收集來的原始資料，並且試擬成因分析後送給評估會議討論。工作小組的聚會時間、參與方式及討論資料會公布在網站上。如果民眾對於工作小組所試擬的成因分析有想法或不同意見，也歡迎民眾於
+     = link_to '線上留言討論', 'http://talk.justice.care/c/analyses', target:'_blank'
+    |。
+    p 
+      span.foreword 工作小組聚會紀錄
+    .col-xs-12
+      .col-xs-4
+        p = image_tag('20160614.png', class: 'center-block', width: '100%')
+      .col-xs-4
+        p = image_tag('20160621.png', class: 'center-block', width: '100%')
+      .col-xs-4
+        p = image_tag('20160628.png', class: 'center-block', width: '100%')
+
+    p 評估會議訂於7/2、7/9兩天，會議時間為13時30分至17時30分，地點是法律扶助基金會。與會議相關的書面資料，會在評估會議前公開上網，方便查閱。與會專家的姓名與簡介也會事先上網，以受公開檢視。
     p 評估會議當天雖然是實體會議，但同時也採網路直播、即時文播的方式呈現，歡迎各位朋友與我們在線上持續互動。而會議錄影、會議記錄逐字稿、會議紀錄、線上聊天室互動記錄等資料也都會在會議後公開上網。
     h3.text-header
       span.nobreak 全民司改運動的特色：
@@ -96,3 +108,22 @@
                       = link_to '閱讀分析', analysis_path(analysis), class: 'btn btn-list-3', role: 'button'
 
 
+ #record0614.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+          h2#sign_up.modal-title.text-center 會議紀錄
+        .modal-body.small
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item src="//www.youtube.com/embed/ues3hOon-Hc"
+
+ #record0621.modal.fade.in
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+          h2#sign_up.modal-title.text-center 會議紀錄
+        .modal-body.small
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item src="//www.youtube.com/embed/bFcR1AkI0XM"
