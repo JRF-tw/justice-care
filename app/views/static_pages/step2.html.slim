@@ -33,12 +33,12 @@
     span.nobreak 第二階段：
     span.nobreak 體能評估
   p 為讓評估會議有效率的進行，我們會事先組成工作小組，試擬成因分析並整理網站討論意見，之後送評估會議參考討論。工作小組成因分析的報告格式說明，請點選此處。
+  p
+      span#list.foreword 問題評估報告
     
 /! 問題清單
 - unless @problems.blank?
-  .col-xs-12.col-md-8.col-md-offset-2#analyses
-    p
-      span#list.foreword 問題評估報告
+  .col-xs-12.col-md-8.col-md-offset-2#analyses 
     table.table-bordered.table-list
       - @problems.each do |problem|
         - if problem.analyses.length == 1
