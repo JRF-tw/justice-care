@@ -1,0 +1,8 @@
+.container.col-lg-8.col-lg-offset-2
+  /! 內容
+  h1.text-center 編輯分析
+  = simple_form_for @analysis, url: admin_analysis_path(@analysis), method: :put, class: 'form-horizontal' do |f|
+    = render :partial => 'form', :locals => { :f => f }
+    
+  /! 內容end
+/! 登入

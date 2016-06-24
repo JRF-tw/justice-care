@@ -1,0 +1,25 @@
+.container.col-lg-10.col-lg-offset-1
+  /! 內容
+  h1.text-center 修改/刪除分析
+  table.table.table-hover
+    thead
+      tr
+        th ID
+        th 分析清單
+        th 編輯/刪除
+    tbody
+      - @analyses.each do |analysis|
+        tr
+          td = analysis.no
+          td = analysis.title
+          td
+            .btn-group.btn-group-sm
+            = link_to '編輯', edit_admin_analysis_path(analysis), class: "btn btn-default"
+            = link_to '刪除', admin_analysis_path(analysis), method: :delete, data: { confirm: '確認要刪除嗎？' }, class: "btn btn-default"
+  /! 內容end
+  .text-center
+    /! pagination start
+    /! to雨蒼:顯示15則
+    = paginate @analyses
+/! 登入
+
