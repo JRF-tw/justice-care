@@ -39,7 +39,9 @@ Rails.application.routes.draw do
     get '/', to: redirect('/admin/problems')
     resources :problems
     resources :users, only: [:index, :update]
-    resources :analyses
+    resources :analyses do
+      resources :reports
+    end
   end
 
   # root 'welcome#index'
