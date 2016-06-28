@@ -40,7 +40,7 @@
 
 .col-xs-12.col-md-6.col-md-offset-3
   p
-    span#list.foreword 問題評估報告
+    span#list.foreword.pr-10 問題評估報告
     small = link_to '報告格式說明','#eg', data: {toggle: "modal"}
     
 /! 問題清單
@@ -92,7 +92,13 @@
       p = link_to image_tag('20160621.png', class: 'center-block', width: '100%'), '#record0621', data: {toggle: "modal"}
     .col-xs-4
       p = image_tag('20160628.png', class: 'center-block', width: '100%')
-  
+
+/! 分隔線
+.col-xs-12
+  hr.col-xs-12.row.col-md-8.col-md-offset-2
+/! 分隔線end
+
+.col-xs-12.col-md-6.col-md-offset-3
   h3.text-header
     span.nobreak 全民司改運動的特色：
     span.nobreak 公開透明！
@@ -158,33 +164,33 @@
         h2#sign_up.modal-title.text-center 問題分析範例
       .modal-body.small
         p
-          span.foreword.pr-10 司法問題
-          span 林瑋婷
-        p
-          span.foreword.pr-10 報告人
+          span.label.label-default.pr-10 司法問題
           span 放第一階段「司法哪裡有問題」的一句話及其說明。
         p
-          span.foreword 網路意見
+          span.label.label-default.pr-10 報告人
+          span ＯＯＯ
+        p
+          span.label.label-default 網路意見
         ol
           li 討論區中原本板主就已經有把某些內容較豐富的留言highlight起來，這些留言必須要放到此處。
           li 討論區中板主沒有highlight的留言，報告人可挑選自己覺得想放想討論的。
         p
-          span.foreword 分析範圍
+          span.label.label-default 分析範圍
         p 由於可能將不同問題分拆成不同部分由不同人負責寫報告，所以要說明一下本報告針對前面所列的司法問題，分析範圍到底為何。
         p
-          span.foreword.pr-10 利害關係人
+          span.label.label-default.pr-10 利害關係人
           span 列出此司法問題可能影響的人。
         p
-          span.foreword 相關法律
+          span.label.label-default 相關法律
         p 列出此司法問題可能相關的法律，以利修法參考。因為第三階段解法的討論可能會用到。
         p
-          span.foreword 相關議題
+          span.label.label-default 相關議題
         p 列出此司法問題所涉及的相關議題，列出來的話可以由此去查更多的相關討論，可能是成因或解法。
         p
-          span.foreword 分析依據
+          span.label.label-default 分析依據
         p 為了讓讀者了解報告人作成的成因分析是否有依據、是否可靠，因此請報告人盡量列出自己作成因分析的依據。
         p
-          span.foreword 成因分析報告怎麼寫
+          span.label.label-default 成因分析報告怎麼寫
         ol
          li
           h4 為什麼要將司法改革要怎麼做，拆分成三階段來探討？
