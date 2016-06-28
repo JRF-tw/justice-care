@@ -192,9 +192,10 @@ body {
   background-color: #df542f;
   color: #ffffff;
   min-height: 60px;
-  font-size: 35px;
+  font-size: 25px;
   padding-left:5px;
   padding-right:5px;
+  padding-top: 8px;
   text-align:center;
 }
 /*問題清單*/
