@@ -21,17 +21,26 @@
     h1.text-header.text-center
       span.nobreak 第二階段：
       span.nobreak 體能評估
-    p 如同「體能評估」是為了瞭解體能表現不佳，背後所代表的身體機能狀況一樣，這個階段的目標是分析不同人感受到的司法問題，它背後可能的「成因」是什麼。例如：民眾覺得司法問題是「判決與人民期待有落差」，那我們就要來分析，這個問題的成因，是法律規定有問題？還是法官的經驗與人民有差異？還是因為檢察官提供的證據有問題？還是媒體的報導引起誤會等…。
-    p 
-      | 評估會議為實體會議，同時進行
-      strong 網路直播、即時文播
-      | ，歡迎各位朋友與我們在線上持續互動。而會議錄影、會議記錄逐字稿、會議紀錄、線上聊天室互動記錄等資料也都會在會議後公開上網。
+    .well.small
+      p 如同「體能評估」是為了瞭解體能表現不佳，背後所代表的身體機能狀況一樣，這個階段的目標是分析不同人感受到的司法問題，它背後可能的「成因」是什麼。例如：民眾覺得司法問題是「判決與人民期待有落差」，那我們就要來分析，這個問題的成因，是法律規定有問題？還是法官的經驗與人民有差異？還是因為檢察官提供的證據有問題？還是媒體的報導引起誤會等…。
+      p 
+        | 評估會議邀請11位不同領域的專家參與，成員組成為「非法律人過半」，讓討論的意見更多元。會議為實體會議，同時進行
+        strong 網路直播、即時文播
+        | ，歡迎各位朋友與我們在線上持續互動。而會議錄影、會議記錄逐字稿、會議紀錄、線上聊天室互動記錄等資料也都會在會議後公開上網。
+      p 
+      |※
+      = link_to '會議議程及出席專家介紹','#0702', target:'_blank'
+      p
+       = link_to '點我看直播','https://youtu.be/HxBepz8r6zA', class: 'btn btn-gotalk', target:'_blank'
     p
-      span.foreword.pr-10 時間
+      span.foreword.pr-10.w-font 時間
       span 7/2(六)、7/9(六) 13:30～17:30
     p
-      span.foreword.pr-10 地點
+      span.foreword.pr-10.w-font 地點
       span 法律扶助基金會 6F
+    p
+      span.foreword.pr-10.w-font 主辦單位
+      span 民間司法改革基金會、法律扶助基金會
     = image_tag('bird-3.png', class: 'center-block', width: '30%')
   /! 分隔線
   .col-xs-12
@@ -135,6 +144,120 @@
                     td
                       = link_to '閱讀分析', analysis_path(analysis), class: 'btn btn-list-3', role: 'button'
 
+#0702.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+        h2#sign_up.modal-title.text-center 7/2評估會議
+      .modal-body.small
+        p
+         span.foreword 與會專家
+        ul.list-unstyled
+         li
+          p
+           span.label.label-default NGO
+          ul
+           li 吳靜如／台灣國際勞工協會　政策部研究員
+           li 李佩雯／婦女新知基金會　常務董事
+           li 林永頌／民間司法改革基金會　董事長
+         li
+          p
+           span.label.label-default 原住民代表
+          ul
+           li 洪簡廷卉／法律扶助基金會　董事
+         li
+          p
+           span.label.label-default 法官
+          ul
+           li 陳欽賢／台南地方法院　法官
+         li
+          p
+           span.label.label-default 檢察官
+          ul
+           li 白忠志／新北地方法院檢察署 主任檢察官
+         li
+          p
+           span.label.label-default 律師
+          ul
+           li 吳信賢／中華民國律師公會全國聯合會　理事
+         li
+          p
+           span.label.label-default 犯罪被害人
+          ul
+           li 林作逸／新北市中和國民小學　教師
+         li
+          p
+           span.label.label-default 學者
+          ul
+           li 蔡博方／台北醫學大學醫學人文研究所　助理教授
+         li
+          p
+           span.label.label-default 媒體
+          ul
+           li 曾柏文／Initium Media端傳媒　評論總監
+         li
+          p
+           span.label.label-default 人權教育作家
+          ul
+           li 翁麗淑／新北市蘆洲區鷺江國民小學　教師
+        p
+         span.foreword 工作人員
+        ul.list-unstyled
+         li
+          p
+           span.label.label-default 主持人
+          ul
+           li 陳雨凡／民間司法改革基金會　副執行長
+           li 林雨蒼／民間司法改革基金會　執行秘書
+          p
+           span.label.label-default 報告人
+          ul
+           li 林瑋婷／民間司法改革基金會　執行秘書
+        p
+         span.foreword 會議流程
+        table.table
+         thead
+          tr
+           th 時間
+           th 會議內容
+         tbody
+          tr
+           td 13:00-13:30
+           td 報到
+          tr
+           td 13:30-13:45
+           td 主席開場與介紹會議流程
+          tr
+           td 13:45-13:55
+           td 與會者自我介紹
+          tr
+           td 13:55-14:30
+           td 問題分析：偵查中的不當報導，造成輿論公審、媒體未確實查證做出錯誤報導，傷害司法與當事人
+          tr
+           td 14:30-15:05
+           td 問題分析：民眾不熟悉司法運作實務，對司法運作方式產生誤解、遇到官司民眾常不知該怎麼辦
+          tr
+           td 15:05-15:10
+           td 中場休息
+          tr
+           td 15:10-15:45
+           td 問題分析：法官檢察官案件量負擔大，辦案品質受影響
+          tr
+           td 15:45-16:20
+           td 問題分析：缺乏明確客觀審查標準以淘汰真正不適任的司法官
+          tr
+           td 16:20-16:25
+           td 中場休息
+          tr
+           td 16:25-17:00
+           td 問題分析：法學教育培養出只會考試的法律人
+          tr
+           td 17:00-17:10
+           td 確認全民司改運動「第三階段」解題優先順序
+          tr
+           td 17:10-17:30
+           td 意見補充
 
 #record0614.modal.fade.in
   .modal-dialog
