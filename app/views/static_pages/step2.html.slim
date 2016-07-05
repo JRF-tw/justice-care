@@ -22,22 +22,39 @@
       span.nobreak 第二階段：
       span.nobreak 體能評估
     .well.small
-      p 如同「體能評估」是為了瞭解體能表現不佳，背後所代表的身體機能狀況一樣，這個階段的目標是分析不同人感受到的司法問題，它背後可能的「成因」是什麼。例如：民眾覺得司法問題是「判決與人民期待有落差」，那我們就要來分析，這個問題的成因，是法律規定有問題？還是法官的經驗與人民有差異？還是因為檢察官提供的證據有問題？還是媒體的報導引起誤會等…。
+      p 如同「體能評估」是為了瞭解體能表現不佳，背後所代表的身體機能狀況一樣，這個階段的目標是分析不同人感受到的司法問題，它背後可能的「成因」是什麼。
       p 
         | 評估會議邀請11位不同領域的專家參與，成員組成為「非法律人過半」，讓討論的意見更多元。會議為實體會議，同時進行
         strong 網路直播、即時文播
         | ，歡迎各位朋友與我們在線上持續互動。而會議錄影、會議記錄逐字稿、會議紀錄、線上聊天室互動記錄等資料也都會在會議後公開上網。
-      p 
-      |※
-      = link_to '會議議程及出席專家介紹','#0702', data: {toggle: "modal"}
-      p.text-center
-       = link_to '點我看直播','https://youtu.be/HxBepz8r6zA', class: 'btn btn-gotalk', target:'_blank'
-      p
-        span.foreword.pr-10.w-font 時間
-        span 7/2(六)、7/9(六) 13:30～17:30
-      p
-        span.foreword.pr-10.w-font 地點
-        span 法律扶助基金會 6F
+      .row
+        .col-xs-6
+          .well-sm.bg
+            h4.text-center
+              span.badge.pr-5 已結束
+              strong 第一場次
+              span 7/2
+            hr
+            ul
+             li 時間：7/2(六)13:30-17:30
+             li 地點：法律扶助基金會 6F
+            p.text-center
+             = link_to '議程','#0702', class: 'btn btn-list-2 pr-5', data: {toggle: "modal"}
+             = link_to '看影像紀錄','https://youtu.be/HxBepz8r6zA', class: 'btn btn-list-3', target:'_blank'
+        .col-xs-6
+          .well-sm.bg
+            h4.text-center
+              span.badge.bg1.pr-5 進行中
+              strong 第二場次
+              span 7/9
+            hr
+            ul
+             li 時間：7/9(六)13:30-17:30
+             li 地點：法律扶助基金會 6F
+            p.text-center
+             = link_to '議程','#0709', class: 'btn btn-list-2 pr-5', data: {toggle: "modal"}
+             = link_to '看直播','https://youtu.be/gYy9GnM9RXQ', class: 'btn btn-list-3', target:'_blank'
+
       p
         span.foreword.pr-10.w-font 主辦單位
         span 民間司法改革基金會、法律扶助基金會
@@ -250,12 +267,149 @@
            span.label.label-default 報告人
           p 林瑋婷／民間司法改革基金會　執行秘書
 
+#0709.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+        h2#sign_up.modal-title.text-center 7/9評估會議
+      .modal-body.small
+        h4.text-center.text-header 會議流程
+        table.table
+         thead
+          tr
+           th width="20%" 時間
+           th 會議內容
+         tbody
+          tr
+           td 13:00-13:30
+           td 報到
+          tr
+           td 13:30-13:45
+           td 主席開場與介紹會議流程
+          tr
+           td 13:45-13:55
+           td 與會者自我介紹
+          tr
+           td 13:55-14:30
+           td
+            span.badge 問題分析
+            司法誤判造成當事人二度傷害
+          tr
+           td 14:30-15:05
+           td
+            span.badge 問題分析
+            有些警察是執法人員自己卻不守法
+          tr
+           td 15:05-15:10
+           td 中場休息
+          tr
+           td 15:10-15:45
+           td
+            span.badge 問題分析
+            弱勢族群在司法中需要更多協助
+          tr
+           td 15:45-16:20
+           td
+            span.badge 問題分析
+            受刑人出獄後謀生困難，再犯率高
+          tr
+           td 16:20-16:25
+           td 中場休息
+          tr
+           td 16:25-17:00
+           td
+            span.badge 問題分析
+            有些法律不正當，也有些最高法院判例決議與社會脫節
+          tr
+           td 17:00-17:10
+           td 確認全民司改運動「第三階段」解題優先順序
+          tr
+           td 17:10-17:30
+           td 意見補充
+        hr
+        h4.text-header.text-center 與會專家
+        ul.list-unstyled
+         li
+          p
+           span.label.label-default NGO
+          ul
+           li 陳素香／台灣國際勞工協會 理事長
+           li 邱伊翎／台灣人權促進會 秘書長
+           li 陳惠敏／監所改革關注小組　成員
+           li 林永頌／民間司法改革基金會　董事長
+         li
+          p
+           span.label.label-default 原住民代表
+          p 陳以箴／原民會 平埔聚落活力計畫 專案執行
+         li
+          p
+           span.label.label-default 法官
+          p 錢建榮／台灣桃園地方法院　法官
+         li
+          p
+           span.label.label-default 檢察官
+          p 白忠志／新北地方法院檢察署 主任檢察官
+         li
+          p
+           span.label.label-default 律師
+          p 黃致豪／執業律師、台大心理研究所博士生
+         li
+          p
+           span.label.label-default 犯罪被害人
+          p 林作逸／新北市中和國民小學　教師
+         li
+          p
+           span.label.label-default 媒體
+          p 吳東牧／公視新聞議題中心　製作人
+         li
+          p
+           span.label.label-default 網友
+          p Bill_Tsai
+
+        hr
+        h4.text-center.text-header 工作人員
+        ul.list-unstyled
+         li
+          p
+           span.label.label-default 主持人
+          ul
+           li 陳雨凡／民間司法改革基金會　副執行長
+           li 林雨蒼／民間司法改革基金會　執行秘書
+         li
+          p
+           span.label.label-default 報告人
+          p 林瑋婷／民間司法改革基金會　執行秘書
+         li
+          p
+           span.label.label-default 文字轉播
+          p 陳梅慧／民間司法改革基金會　執行秘書
+          p 蘇培萱／財團法人民間司法改革基金會　志工
+         li
+          p
+           span.label.label-default 會議記錄
+          p 周宥凭／財團法人民間司法改革基金會　志工
+          p 董瑜絹／財團法人民間司法改革基金會　志工
+         li
+          p
+           span.label.label-default 場控
+          p 黃盈嘉／財團法人民間司法改革基金會　專職律師
+         li
+          p
+           span.label.label-default 攝影
+          p 柳茹薰／財團法人民間司法改革基金會　美術設計
+        hr
+        h4.text-center.text-header 主辦單位
+        ul.list-unstyled
+         li 財團法人民間司法改革基金會
+         li 財團法人法律扶助基金會
+
 #record0614.modal.fade.in
   .modal-dialog
     .modal-content
       .modal-header
         button.close aria-hidden="true" data-dismiss="modal" type="button" ×
-        h2#sign_up.modal-title.text-center 會議紀錄
+        h2#sign_up.modal-title.text-center 6/14會議紀錄
       .modal-body.small
         .embed-responsive.embed-responsive-16by9
           iframe.embed-responsive-item src="//www.youtube.com/embed/ues3hOon-Hc"
@@ -267,10 +421,22 @@
     .modal-content
       .modal-header
         button.close aria-hidden="true" data-dismiss="modal" type="button" ×
-        h2#sign_up.modal-title.text-center 會議紀錄
+        h2#sign_up.modal-title.text-center 6/21會議紀錄
       .modal-body.small
         .embed-responsive.embed-responsive-16by9
           iframe.embed-responsive-item src="//www.youtube.com/embed/bFcR1AkI0XM"
+        p
+         = link_to "逐字稿" ,"http://goo.gl/tPPAIX", target:'_blank', class: 'btn btn-gotalk pt-30'
+
+#record0628.modal.fade.in
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+        h2#sign_up.modal-title.text-center 6/28會議紀錄
+      .modal-body.small
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item src="//www.youtube.com/embed/rl54gMXvwc4"
 
 #eg.modal.fade.in
   .modal-dialog
