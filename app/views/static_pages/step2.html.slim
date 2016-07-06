@@ -27,33 +27,67 @@
         | 評估會議邀請11位不同領域的專家參與，成員組成為「非法律人過半」，讓討論的意見更多元。會議為實體會議，同時進行
         strong 網路直播、即時文播
         | ，歡迎各位朋友與我們在線上持續互動。而會議錄影、會議記錄逐字稿、會議紀錄、線上聊天室互動記錄等資料也都會在會議後公開上網。
-      .row.pb-10
-        .col-xs-6
-          .well-sm.bg
-            h4.text-center
-              span.badge.pr-5 已結束
-              strong 第一場次
-              span 7/2
-            hr
-            ul
-             li 時間：7/2(六)13:30-17:30
-             li 地點：法律扶助基金會 6F
-            p.text-center
-             = link_to '議程','#0702', class: 'btn btn-list-2 pr-5', data: {toggle: "modal"}
-             = link_to '看影像紀錄','https://youtu.be/HxBepz8r6zA', class: 'btn btn-list-3', target:'_blank'
-        .col-xs-6
-          .well-sm.bg
-            h4.text-center
-              span.badge.bg1.pr-5 即將開始
-              strong 第二場次
-              span 7/9
-            hr
-            ul
-             li 時間：7/9(六)13:30-17:30
-             li 地點：法律扶助基金會 6F
-            p.text-center
-             = link_to '議程','#0709', class: 'btn btn-list-2 pr-5', data: {toggle: "modal"}
-             = link_to '看直播','https://youtu.be/gYy9GnM9RXQ', class: 'btn btn-list-3', target:'_blank'
+      #accordion.panel-group
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+            span.badge.bg1.pr-5 即將開始
+            span
+              strong
+               = link_to '7/9(六)第二場次','#collapseOne', class:'text-header', data: {toggle: "collapse", parent: "#accordion"}
+          #collapseOne.panel-collapse.collapse.in
+            .panel-body
+              p
+                span.foreword.w-font.pr-10 與會專家
+              .row.pb-10
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p1.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>陳素香</h4>台灣國際勞工協會理事長", :"original-title" => 'NGO'}, title:'NGO', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p2.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>邱伊翎</h4>台灣人權促進會秘書長", :"original-title" => 'NGO'}, title:'NGO', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p3.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>陳惠敏</h4>監所改革關注小組成員", :"original-title" => 'NGO'}, title:'NGO', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p4.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>林永頌</h4>民間司法改革基金會董事長", :"original-title" => 'NGO'}, title:'NGO', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p5.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>陳以箴</h4>原民會平埔聚落活力計畫專案執行", :"original-title" => '原住民代表'}, title:'原住民代表', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p6.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>錢建榮</h4>台灣桃園地方法院法官", :"original-title" => '法官'}, title:'法官', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p7.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>白忠志</h4>新北地方法院檢察署主任檢察官", :"original-title" => '檢察官'}, title:'檢察官', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p8.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>黃致豪</h4>執業律師、台大心理研究所博士生", :"original-title" => '律師'}, title:'律師', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p9.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>林作逸</h4>新北市中和國民小學教師", :"original-title" => '犯罪被害人'}, title:'犯罪被害人', type: 'button'
+                .col-sm-2.col-xs-4
+                 = link_to image_tag('p10.png', width: '100%'), 'javascript:void(0)', data: {toggle: "popover", html: "true", trigger: "hover", container:"body", placement:"right", content:"<h4>吳東牧</h4>台灣人權促進會秘書長", :"original-title" => '媒體'}, title:'媒體', type: 'button'
+              p
+                span.foreword.w-font.pr-10 時間
+                span 7/9(六)13:30-17:30
+                br
+                span.foreword.w-font.pr-10 地點
+                span 法律扶助基金會 6F
+              p.text-center
+               = link_to '看議程','#0709', class: 'btn btn-list-2 pr-5', data: {toggle: "modal"}
+               = link_to '看線上直播','https://youtu.be/gYy9GnM9RXQ', class: 'btn btn-list-3', target:'_blank'
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+             span.badge.pr-5 已結束
+             span
+              strong
+               = link_to '7/2(六)第一場次','#collapseTwo', data: {toggle: "collapse", parent: "#accordion"}
+          #collapseTwo.panel-collapse.collapse
+            .panel-body
+              .embed-responsive.embed-responsive-16by9
+                iframe.embed-responsive-item src="//www.youtube.com/embed/HxBepz8r6zA"
+              p
+                span.foreword.w-font.pr-10 時間
+                span 7/2(六)13:30-17:30
+                br
+                span.foreword.w-font.pr-10 地點
+                span 法律扶助基金會 6F
+              p.text-center
+               = link_to '看議程','#0702', class: 'btn btn-list-2 pr-5', data: {toggle: "modal"}
 
       p
         span.foreword.pr-10.w-font 主辦單位
