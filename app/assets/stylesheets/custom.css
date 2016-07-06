@@ -401,3 +401,24 @@ a {
 .bg1 {
   background-color: #df542f !important;
 }
+.panel-default>.panel-heading {
+    background-image: -webkit-linear-gradient(top,#ffffff 0,#e5bfa1 100%);
+    background-image: -o-linear-gradient(top,#ffffff 0,#e5bfa1 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#e5bfa1));
+    background-image: linear-gradient(to bottom,#ffffff 0,#e5bfa1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
+}
+
+.popover{
+  max-width:200px;
+  font-family: 'Open Sans', Helvetica, Arial, "Source Han Sans TC", "Microsoft Jhenghei", sans-serif !important;
+}
+.popover.top{
+  margin-top:-10px;
+  margin-left: 60px;
+}
+.popover-title{
+  font-weight: 600;
+  color:#ffffff;
+  background-color:#df542f;
+}
