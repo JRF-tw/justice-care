@@ -118,4 +118,5 @@ $( document ).ready(function() {
   };
   $('.vote').click(vote_problem);
   $('.unvote').click(unvote_problem);
+  $('[data-toggle="popover"]').popover();
 });
