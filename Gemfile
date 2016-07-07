@@ -37,7 +37,7 @@ gem 'pg'
 gem 'ransack'
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
-gem 'redactor-rails'
+gem 'redactor-rails', git: 'https://github.com/billy3321/redactor-rails.git'
 gem "carrierwave"
 gem "mini_magick"
 # gem 'lograge'
