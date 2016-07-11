@@ -31,12 +31,14 @@
         .panel.panel-default
           .panel-heading
             h4.panel-title
-            span.badge.bg1.pr-5 即將開始
+            span.badge.bg1.pr-5 已結束
             span
               strong
                = link_to '7/9(六)第二場次','#collapseOne', class:'text-header', data: {toggle: "collapse", parent: "#accordion"}
-          #collapseOne.panel-collapse.collapse.in
+          #collapseOne.panel-collapse.collapse
             .panel-body
+              .embed-responsive.embed-responsive-16by9.pb-10
+                iframe.embed-responsive-item src="//www.youtube.com/embed/gYy9GnM9RXQ"
               p
                 span.foreword.w-font.pr-10 與會專家
               .row.pb-10
@@ -72,7 +74,6 @@
                 span 法律扶助基金會 6F
               p.text-center
                = link_to '看議程','#0709', class: 'btn btn-list-2 pr-5', data: {toggle: "modal"}
-               = link_to '看線上直播','https://youtu.be/gYy9GnM9RXQ', class: 'btn btn-list-3', target:'_blank'
         .panel.panel-default
           .panel-heading
             h4.panel-title
