@@ -13,14 +13,16 @@ class StaticPagesController < ApplicationController
   end
 
   def step1
-    if params[:sort] == 'hot'
-      @problems = Problem.hot_order.page(params[:page])
+    if params[:sort] == 'lastest'
+      @problems = Problem.lastest_order.page(params[:page])
     elsif params[:sort] == 'votes'
       @problems = Problem.votes_order.page(params[:page])
     elsif params[:sort] == '520votes'
       @problems = Problem.votes_order_before_520.page(params[:page])
+    elsif params[:sort] == 'hot'
+      @problems = Problem.hot_order.page(params[:page])
     else
-      @problems = Problem.lastest_order.page(params[:page])
+      @problems = Problem.votes_order.page(params[:page])
     end
     @users_count = User.all.count
     set_meta_tags({
