@@ -23,6 +23,20 @@ describe "Problems" do
     end
 
     describe "#unvote" do
+      it "#success" do
+        problem
+        FactoryGirl.create(:vote, user: user, problem: problem)
+        problem.reload
+        expect(problem.votes.count).to eq(1)
+        vote_data = {
+          problem: {
+            vote: false
+          }
+        }
+        delete "/problems/#{problem.id}/unvote", vote_data
+        problem.reload
+        expect(problem.votes.count).to eq(0)
+      end
     end
   end
 end
