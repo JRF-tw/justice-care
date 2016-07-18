@@ -43,7 +43,6 @@ gem "mini_magick"
 # gem 'lograge'
 gem "rails-i18n"
 gem 'whenever', require: false
-gem 'canonical-rails', github: 'jumph4x/canonical-rails'
 gem 'compass-rails'
 gem 'chosen-rails'
 gem 'lograge'
