@@ -46,8 +46,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
-  config.logger = Logger.new(config.paths["log"].first, 'weekly')
+  config.log_level = :info
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -94,6 +93,11 @@ Rails.application.configure do
   #   options[:params] = event.payload[:params].except("controller", "action")
   #   options
   # end
+  config.logger = Logger.new(config.paths["log"].first, 'weekly')
+  config.lograge.enabled = true
+  config.lograge.custom_options = ->(event) { options = event.payload.slice(:request_id, :user_id, :ip)
+                                    options[:params] = event.payload[:params].except("controller", "action")
+                                    options }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
