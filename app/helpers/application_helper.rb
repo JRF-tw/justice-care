@@ -18,6 +18,8 @@ module ApplicationHelper
       reverse: true,
       description: '',
       canonical: request.url,
+      publisher: Setting.google.pages,
+      author: Setting.google.pages,
       og: {
         title: '全民司法改革運動',
         description: '',
