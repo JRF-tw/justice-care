@@ -27,6 +27,12 @@ defaults: &defaults
     password: ""
     authentication: ""
 
+  fb:
+    pages: ""
+
+  google:
+    pages: ""
+
 development:
   <<: *defaults
 

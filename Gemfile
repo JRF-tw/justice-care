@@ -47,6 +47,7 @@ gem 'canonical-rails', github: 'jumph4x/canonical-rails'
 gem 'compass-rails'
 gem 'chosen-rails'
 gem 'lograge'
+gem 'unicode-display_width'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
