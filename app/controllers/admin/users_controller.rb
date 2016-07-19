@@ -6,7 +6,10 @@ class Admin::UsersController < Admin::BaseController
     @q = User.search(params[:q])
     @users = @q.result(distinct: true).page(params[:page])
     set_meta_tags({
-      title: "管理員管理"
+      title: "管理員管理",
+      og: {
+        title: "管理員管理"
+      }
     })
   end
 

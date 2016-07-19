@@ -8,6 +8,9 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def edit
     set_meta_tags({
       title: '修改法律背景',
       description: '',
@@ -18,9 +21,6 @@ class UsersController < ApplicationController
         description: ''
       }
     })
-  end
-
-  def edit
   end
 
   private

@@ -5,7 +5,10 @@ class Admin::ProblemsController < Admin::BaseController
   def index
     @problems = Problem.order(id: :asc).page(params[:page])
     set_meta_tags({
-      title: "問題管理"
+      title: "問題管理",
+      og: {
+        title: "問題管理"
+      }
     })
   end
 
@@ -17,14 +20,20 @@ class Admin::ProblemsController < Admin::BaseController
   def new
     @problem = Problem.new
     set_meta_tags({
-      title: "新增問題"
+      title: "新增問題",
+      og: {
+        title: "新增問題"
+      }
     })
   end
 
   # GET /problems/1/edit
   def edit
     set_meta_tags({
-      title: "編輯問題"
+      title: "編輯問題",
+      og: {
+        title: "編輯問題"
+      }
     })
   end
 

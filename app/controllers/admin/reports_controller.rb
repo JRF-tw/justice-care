@@ -6,7 +6,10 @@ class Admin::ReportsController < Admin::BaseController
   def index
     @reports = @analysis.reports.order(id: :asc).page(params[:page])
     set_meta_tags({
-      title: "報告管理"
+      title: "報告管理",
+      og: {
+        title: "報告管理"
+      }
     })
   end
 
@@ -18,14 +21,20 @@ class Admin::ReportsController < Admin::BaseController
   def new
     @report = @analysis.reports.new
     set_meta_tags({
-      title: "新增報告"
+      title: "新增報告",
+      og: {
+        title: "新增報告"
+      }
     })
   end
 
   # GET /reports/1/edit
   def edit
     set_meta_tags({
-      title: "編輯報告"
+      title: "編輯報告",
+      og: {
+        title: "編輯報告"
+      }
     })
   end
 

@@ -5,7 +5,10 @@ class Admin::AnalysesController < Admin::BaseController
   def index
     @analyses = Analysis.order(id: :asc).page(params[:page])
     set_meta_tags({
-      title: "分析管理"
+      title: "分析管理",
+      og: {
+        title: "分析管理"
+      }
     })
   end
 
@@ -17,14 +20,20 @@ class Admin::AnalysesController < Admin::BaseController
   def new
     @analysis = Analysis.new
     set_meta_tags({
-      title: "新增分析"
+      title: "新增分析",
+      og: {
+        title: "新增分析"
+      }
     })
   end
 
   # GET /analyses/1/edit
   def edit
     set_meta_tags({
-      title: "編輯分析"
+      title: "編輯分析",
+      og: {
+        title: "編輯分析"
+      }
     })
   end
 
