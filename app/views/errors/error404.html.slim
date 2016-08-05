@@ -9,4 +9,4 @@
     .board-footer-right.visible-lg
       = image_tag('right.png', height: '70px')
 .text-center
-  = image_tag('404error.png')
+  = link_to image_tag('404error.png', alt: '找不到頁面 (404 Not Found)'), step2_path
