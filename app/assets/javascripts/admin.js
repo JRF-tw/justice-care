@@ -21,7 +21,17 @@
 //= require redactor-rails/langs/zh_tw
 //= require redactor-rails/app_config
 
+var ready_ran = 0;
+
 $( document ).ready(function() {
+  if (ready_ran == 1){
+    return;
+  }else{
+    ready_ran = 1;
+  }
+
+  window.init_redactor();
+
   $('.chosen-select').chosen({
     search_contains: true,
     allow_single_deselect: true,

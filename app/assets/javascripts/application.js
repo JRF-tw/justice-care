@@ -16,7 +16,15 @@
 //= require turbolinks
 //= require twitter/bootstrap
 
+var ready_ran = 0;
+
 $( document ).ready(function() {
+  if (ready_ran == 1){
+    return;
+  }else{
+    ready_ran = 1;
+  }
+
   if(window.location.hash) {
       var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
       if (hash == 'log_in' && $('#log_in').length > 0) {
