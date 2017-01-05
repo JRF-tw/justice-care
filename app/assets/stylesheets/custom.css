@@ -26,7 +26,8 @@ body {
   color: #fff2e7;
   border-radius: 0px !important;
 }
-.btn-log-in:hover{
+.btn-log-in:hover,
+.btn-log-in:active{
   background-color: #ffffff;
   color: #df542f;
   font-weight: 600;
@@ -39,7 +40,8 @@ body {
   color: #fff2e7;
   border-radius: 0px !important;
 }
-.btn-sign-up:hover{
+.btn-sign-up:hover,
+.btn-sign-up:active{
   background-color: #ffffff;
   color: #df542f;
   font-weight: 600;
@@ -53,7 +55,8 @@ body {
   margin-bottom:3px;
   margin-right: 3px;
 }
-.btn-use-fb:hover{
+.btn-use-fb:hover,
+.btn-use-fb:active{
   background-color: #ffffff;
   color: #3b5998;
   font-weight: 600;
@@ -69,7 +72,8 @@ body {
   margin-bottom:3px;
   margin-right: 3px;
 }
-.btn-use-g:hover{
+.btn-use-g:hover,
+.btn-use-g:active{
   background-color: #ffffff;
   color: #dc4e41;
   font-weight: 600;
@@ -90,7 +94,8 @@ body {
   padding-top: 10px;
   padding-bottom: 10px
 }
-.btn-step{
+.btn-step:link,
+.btn-step:visited{
     background-color: #f37b21;
     color: #ffffff;
     font-size: 16px;
@@ -98,7 +103,9 @@ body {
     margin: 0px;
     margin-bottom:10px; 
 }
-.btn-step.active,.btn-step:hover{
+.btn-step.active,
+.btn-step:hover,
+.btn-step:active{
     background-color: #ffffff;
     color: #df542f;
     font-size: 16px;
@@ -149,7 +156,15 @@ body {
   margin: 0px;
   margin-bottom:3px; 
 }
-.btn-list-1.active,.btn-list-1:hover,.btn-list-2.active,.btn-list-2:hover,.btn-list-3.active,.btn-list-3:hover{
+.btn-list-1.active,
+.btn-list-1:hover,
+.btn-list-1:active,
+.btn-list-2.active,
+.btn-list-2:hover,
+.btn-list-2:active,
+.btn-list-3.active,
+.btn-list-3:hover,
+.btn-list-3:active{
     background-color: #ffffff;
     color: #df542f;
     font-size: 12px;
@@ -172,7 +187,9 @@ body {
   padding-left:5px;
   padding-right:5px;
 }
-.btn-check.active,.btn-check:hover{
+.btn-check.active,
+.btn-check:hover,
+.btn-check:active{
   background-color: #df542f;
   color: #ffffff;
 }
@@ -216,10 +233,12 @@ body {
   color: #4a4a4a;
   text-decoration:none;
 }
-.list a:hover{
+.list a:hover,
+.list a:active{
   font-weight: 600;
 }
-.list:hover{
+.list:hover,
+.list:active{
   background-color:#fbf8f8;
 }
 /*分頁按鈕*/
@@ -242,6 +261,7 @@ body {
   color: #ffffff;
 }
 .pagination > span:hover,
+.pagination > span:active,
 .pagination > span:focus {
   z-index: 2;
   color: #e4732b;
@@ -250,15 +270,18 @@ body {
   box-shadow:1px -1px rgba(20%,20%,40%,0.5);
 }
 .pagination > span:hover>a,
+.pagination > span:active>a,
 .pagination > span:focus>a{
   text-decoration:none;
   color: #e4732b;
 }
 .pagination>.current,
 .pagination>.current>a:hover,
+.pagination>.current>a:active,
 .pagination>.current>span,
 .pagination>.current>span:focus,
-.pagination>.current>span:hover {
+.pagination>.current>span:hover,
+.pagination>.current>span:active {
     z-index: 3;
     color: #fff;
     cursor: default;
@@ -380,7 +403,10 @@ footer>.col-xs-12{
 .dl-horizontal > dd{
   margin-left: 80px;
 }
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:active{
     color: #fff;
     background-color: #df542f;
     border: 1px solid #fff;
