@@ -52,6 +52,7 @@ class StaticPagesController < ApplicationController
   end
 
   def step3
+    @problems = Problem.step3.votes_order.page(params[:page])
     set_meta_tags({
       title: '訓練項目',
       description: '對問題生成的體制因素討論解方',
