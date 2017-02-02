@@ -37,16 +37,10 @@
   .col-xs-12.col-md-8.col-md-offset-2#solutions
     table.table-bordered.table-list
       - @problems.each do |problem|
-        - if problem.solutions.length == 1
-          tr
-            td.list-nbr = problem.total_votes_cache
-            td.list.lead
-              = link_to problem.title, solutions_path(problem.solutions.first), class: 'pl-5'
-        - elsif  problem.solutions.length > 1
-          tr
-            td.list-nbr = problem.total_votes_cache
-            td.list.lead
-              = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
+        tr
+          td.list-nbr = problem.total_votes_cache
+          td.list.lead
+            = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
     .text-center
       = paginate @problems
 /! 問題清單end
@@ -71,3 +65,21 @@
         = link_to step2_path do
           i.fa.fa-arrow-left.pr-5
           | 評估體能
+- @problems.each do |problem|
+  .modal.fade.in id="problem-#{problem.id}"
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+          h2.modal-title.text-center 解法報告
+        .modal-body.small
+          table.table
+            thead
+              tr
+                th colspan="2"  標題
+            tbody
+              - problem.solutions.each do |solution|
+                tr
+                  td = solution.title
+                  td
+                    = link_to '閱讀解法', solution_path(solution), class: 'btn btn-list-3', role: 'button'
