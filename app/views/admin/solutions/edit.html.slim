@@ -1,0 +1,8 @@
+.container.col-lg-8.col-lg-offset-2
+  /! 內容
+  h1.text-center 編輯解法
+  = simple_form_for @solution, url: admin_solution_path(@solution), method: :put, class: 'form-horizontal' do |f|
+    = render :partial => 'form', :locals => { :f => f }
+    
+  /! 內容end
+/! 登入

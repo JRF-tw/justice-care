@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623094538) do
+ActiveRecord::Schema.define(version: 20170202030749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20160623094538) do
     t.string   "status",                default: "step1"
   end
 
+  create_table "problems_solutions", force: :cascade do |t|
+    t.integer "problem_id",  null: false
+    t.integer "solution_id", null: false
+  end
+
+  add_index "problems_solutions", ["problem_id", "solution_id"], name: "index_problems_solutions_on_problem_id_and_solution_id", unique: true, using: :btree
+
   create_table "redactor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -71,6 +78,15 @@ ActiveRecord::Schema.define(version: 20160623094538) do
     t.integer  "no",            default: 0
     t.string   "discourse_url"
     t.string   "mindmap_url"
+    t.text     "content"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "no",            default: 0
+    t.string   "discourse_url"
     t.text     "content"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false

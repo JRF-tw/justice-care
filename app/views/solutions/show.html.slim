@@ -1,0 +1,30 @@
+/! 標題
+.col-xs-12
+  .col-xs-12.col-md-6.col-md-offset-3
+    table
+      tr
+        td
+          span.foreword.pr-10 = @solution.no
+        td
+          h1.text-header = @solution.title
+/! 分析報告
+
+.col-xs-12.col-md-8.col-md-offset-2
+  h1.text-header.text-center 解法
+  .solution-content
+    = @solution.content.try :html_safe
+
+.col-xs-12
+  hr.col-xs-12.row.col-md-8.col-md-offset-2
+/! 分隔線end
+.col-xs-12
+  .col-md-8.col-xs-12.col-md-offset-2
+    p.lead.text-gotalk
+      | 對解法有更多想法？
+      = link_to '一起來討論', @solution.discourse_url, class: 'btn btn-gotalk', target: '_blank'
+.col-xs-12
+  .col-md-8.col-xs-12.col-md-offset-2
+    h2.text-header.pull-right
+      = link_to step3_path, anchor: 'solutions' do
+        i.fa.fa-arrow-left.pr-5
+        | 返回列表

@@ -3,6 +3,7 @@ class Problem < ActiveRecord::Base
   has_many :users, -> { uniq }, through: :votes
   has_and_belongs_to_many :analyses, -> { uniq }
   has_many :reports, through: :analyses
+  has_and_belongs_to_many :solutions, -> { uniq }
   paginates_per 15
 
   scope :hot_order, -> {
@@ -25,7 +26,11 @@ class Problem < ActiveRecord::Base
   }
 
   scope :step2, -> {
-    where(status: 'step2').votes_order
+    where(status: ['step2', 'step3']).votes_order
+  }
+
+  scope :step3, -> {
+    where(status: 'step3').votes_order
   }
 
   def is_voted?(user)

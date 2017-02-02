@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   match '/step3',    to: 'static_pages#step3',    via: 'get'
   match '/', to: 'static_pages#home', anchor: 'login', as: :new_user_session, via: 'get'
   resources :analyses, only: [:show]
+  resources :solutions, only: [:show]
 
   resources :users, only: [:update, :edit]
   resources :problems, only: [] do
@@ -37,11 +38,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/', to: redirect('/admin/problems')
-    resources :problems
+    resources :problems, except: [:show]
     resources :users, only: [:index, :update]
-    resources :analyses do
-      resources :reports
+    resources :analyses, except: [:show] do
+      resources :reports, except: [:show]
     end
+    resources :solutions, except: [:show]
   end
 
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ], as: 'not_found'

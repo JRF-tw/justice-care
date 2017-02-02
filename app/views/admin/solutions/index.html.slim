@@ -1,0 +1,24 @@
+.container.col-lg-10.col-lg-offset-1
+  /! 內容
+  h1.text-center 修改/刪除解法
+  table.table.table-hover
+    thead
+      tr
+        th 解法清單
+        th 編輯/刪除
+    tbody
+      - @solutions.each do |solution|
+        tr
+          td = solution.title
+          td
+            .btn-group.btn-group-sm
+            = link_to '編輯', edit_admin_solution_path(solution), class: "btn btn-default"
+            = link_to '刪除', admin_solution_path(solution), method: :delete, data: { confirm: '確認要刪除嗎？' }, class: "btn btn-default"
+  /! 內容end
+  .text-center
+    /! pagination start
+    /! to雨蒼:顯示15則
+    = paginate @solutions
+  = link_to '新增解法', new_admin_solution_path, class: "btn btn-default"
+/! 登入
+

@@ -33,8 +33,23 @@
     p.text-center.row
       = image_tag('bird-6.png', class: 'img-responsive center-block')
 /! 分隔線
-.col-xs-12
-  hr.col-xs-12.row.col-md-8.col-md-offset-2
+- unless @problems.blank?
+  .col-xs-12.col-md-8.col-md-offset-2#solutions
+    table.table-bordered.table-list
+      - @problems.each do |problem|
+        - if problem.solutions.length == 1
+          tr
+            td.list-nbr = problem.total_votes_cache
+            td.list.lead
+              = link_to problem.title, solutions_path(problem.solutions.first), class: 'pl-5'
+        - elsif  problem.solutions.length > 1
+          tr
+            td.list-nbr = problem.total_votes_cache
+            td.list.lead
+              = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
+    .text-center
+      = paginate @problems
+/! 問題清單end
 /! 分隔線end
 .col-xs-12
   .col-xs-12.col-md-6.col-md-offset-3
