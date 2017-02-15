@@ -44,10 +44,16 @@
   .col-xs-12.col-md-8.col-md-offset-2#solutions
     table.table-bordered.table-list
       - @problems.each do |problem|
-        tr
-          td.list-nbr = problem.total_votes_cache
-          td.list.lead
-            = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
+        - if problem.analyses.length == 1
+          tr
+            td.list-nbr = problem.total_votes_cache
+            td.list.lead
+              = link_to problem.title, analysis_path(problem.analyses.first), class: 'pl-5'
+        - elsif  problem.analyses.length > 1
+          tr
+            td.list-nbr = problem.total_votes_cache
+            td.list.lead
+              = link_to problem.title, "#problem-#{problem.id}", class: "pl-5", data: {toggle: "modal"}
     .text-center
       = paginate @problems
 /! 報告清單end
