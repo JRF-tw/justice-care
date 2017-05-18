@@ -1,12 +1,12 @@
 class StaticPagesController < ApplicationController
   def home
     set_meta_tags({
-      title: '活動說明',
+      title: '全民司改運動',
       description: '若對台灣司法懷有期許和熱情，現在，就是你站出來的時候。跟我們一起做「全民司改運動」！',
       keywords: '司法改革,全民司法改革運動,全民司改運動,民間司改會',
       og: {
         type: 'website',
-        title: '活動說明',
+        title: '全民司改運動',
         description: '若對台灣司法懷有期許和熱情，現在，就是你站出來的時候。跟我們一起做「全民司改運動」！'
       }
     })
