@@ -6,7 +6,7 @@ html lang="zh-Hant-TW"
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     meta content="width=device-width, initial-scale=1" name="viewport"
     title 全民司法改革運動
-    link href="#{assets_path('logo.png')}" rel="shortcut icon"
+    link href="#{image_path('logo.png')}" rel="shortcut icon"
     = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
     /! HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -20,5 +20,4 @@ html lang="zh-Hant-TW"
     = render 'layouts/admin_header'
     = yield
     = debug(params) if Rails.env.development?
-    - console if Rails.env.development?
     = javascript_include_tag 'admin', 'data-turbolinks-track' => true
