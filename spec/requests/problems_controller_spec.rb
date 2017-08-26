@@ -15,7 +15,7 @@ describe "Problems" do
             vote: true
           }
         }
-        post "/problems/#{problem.id}/vote", vote_data
+        post "/problems/#{problem.id}/vote", params: vote_data
         problem.reload
         expect(problem.total_votes_cache).to eq(1)
         expect(problem.recently_votes_cache).to eq(1)
@@ -33,7 +33,7 @@ describe "Problems" do
             vote: false
           }
         }
-        delete "/problems/#{problem.id}/unvote", vote_data
+        delete "/problems/#{problem.id}/unvote", params: vote_data
         problem.reload
         expect(problem.votes.count).to eq(0)
       end

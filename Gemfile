@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem "bundler", ">= 1.8.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -26,10 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-turbolinks'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'meta-tags', '~> 2.0.0'
+gem 'meta-tags'
 gem 'devise'
 gem 'simple_form'
-gem 'slim-rails'
+gem 'slim-rails', '3.1.1'
 gem 'factory_girl_rails'
 gem 'kaminari'
 gem 'settingslogic'
@@ -41,7 +41,7 @@ gem 'redactor-rails', git: 'https://github.com/billy3321/redactor-rails.git'
 gem "carrierwave"
 gem "mini_magick"
 # gem 'lograge'
-gem "rails-i18n"
+gem "rails-i18n", '~> 5.0.0'
 gem 'whenever', require: false
 gem 'compass-rails'
 gem 'chosen-rails'

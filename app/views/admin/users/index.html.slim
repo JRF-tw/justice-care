@@ -32,11 +32,11 @@
           td
             - if user.admin?
               = simple_form_for user, url: admin_user_path(user), method: :put do |f|
-                = f.input :admin, as: :hidden, :input_html => { :value => 0 }
+                = f.input :admin, as: :hidden, input_html: { value: 0 }
                 = f.button :submit, "移除管理權限"
             - else
               = simple_form_for user, url: admin_user_path(user), method: :put do |f|
-                = f.input :admin, as: :hidden, :input_html => { :value => 1 }
+                = f.input :admin, as: :hidden, input_html: { value: 1 }
                 = f.button :submit, "授與管理權限"
   .text-center
     = paginate @users

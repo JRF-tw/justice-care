@@ -24,6 +24,6 @@ env :PATH, '/usr/local/rvm/gems/ruby-2.2-head/bin:/usr/local/rvm/gems/ruby-2.2-h
 
 set :output, 'log/cron.log'
 
-every 1.day, :at => '1:00 am' do
+every 1.day, at: '1:00 am' do
   rake "problem:sync_votes_count"
 end
