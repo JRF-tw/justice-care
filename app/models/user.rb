@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   validates_presence_of :email
   has_many :votes
-  has_many :problems, -> { uniq }, through: :votes
+  has_many :problems, -> { distinct }, through: :votes
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, provider_uid: auth.uid).first
@@ -20,12 +20,12 @@ class User < ActiveRecord::Base
         registered_user.save
         return registered_user
       else
-        user = User.new(name:auth.info.name,
-                            provider:auth.provider,
-                            provider_uid:auth.uid,
-                            email:auth.info.email,
-                            password:Devise.friendly_token[0,20]
-                          )
+        user = User.new(name: auth.info.name,
+          provider: auth.provider,
+          provider_uid: auth.uid,
+          email: auth.info.email,
+          password: Devise.friendly_token[0,20]
+        )
         return user
       end
     end
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
         return registered_user
       else
         user = User.new(name: data["name"],
-          provider:auth.provider,
+          provider: auth.provider,
           email: data["email"],
           provider_uid: auth.uid ,
           password: Devise.friendly_token[0,20]

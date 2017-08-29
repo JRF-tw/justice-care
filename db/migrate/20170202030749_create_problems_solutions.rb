@@ -1,4 +1,4 @@
-class CreateProblemsSolutions < ActiveRecord::Migration
+class CreateProblemsSolutions < ActiveRecord::Migration[4.2]
   def change
     create_table :problems_solutions do |t|
       t.references :problem, null: false

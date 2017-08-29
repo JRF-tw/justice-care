@@ -36,7 +36,7 @@ describe "Admin/Solution" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/solutions", solution: new_solution
+        post "/admin/solutions", params: { solution: new_solution }
         expect(response).to be_redirect
       end
     end
@@ -45,7 +45,7 @@ describe "Admin/Solution" do
       it "redirect" do
         solution
         update_data = { title: "new_title" }
-        put "/admin/solutions/#{solution.id}", solution: update_data
+        put "/admin/solutions/#{solution.id}", params: { solution: update_data }
         expect(response).to be_redirect
       end
     end
@@ -87,7 +87,7 @@ describe "Admin/Solution" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/solutions", solution: new_solution
+        post "/admin/solutions", params: { solution: new_solution }
         expect(response).to be_redirect
       end
     end
@@ -96,7 +96,7 @@ describe "Admin/Solution" do
       it "redirect" do
         solution
         update_data = { title: "new_title" }
-        put "/admin/solutions/#{solution.id}", solution: update_data
+        put "/admin/solutions/#{solution.id}", params: { solution: update_data }
         expect(response).to be_redirect
       end
     end
@@ -139,7 +139,7 @@ describe "Admin/Solution" do
 
     describe "#create" do
       it "success" do
-        post "/admin/solutions", solution: new_solution
+        post "/admin/solutions", params: { solution: new_solution }
         expect(response).to be_redirect
       end
     end
@@ -148,7 +148,7 @@ describe "Admin/Solution" do
       it "success" do
         solution
         update_data = { title: "new_title" }
-        put "/admin/solutions/#{solution.id}", solution: update_data
+        put "/admin/solutions/#{solution.id}", params: { solution: update_data }
         expect(response).to be_redirect
       end
     end

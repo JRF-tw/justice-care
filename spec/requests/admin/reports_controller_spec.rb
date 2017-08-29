@@ -38,7 +38,7 @@ describe "Admin/Report" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/analyses/#{analysis.id}/reports", report: new_report
+        post "/admin/analyses/#{analysis.id}/reports", params: { report: new_report }
         expect(response).to be_redirect
       end
     end
@@ -47,7 +47,7 @@ describe "Admin/Report" do
       it "redirect" do
         report
         update_data = { title: "new_title" }
-        put "/admin/analyses/#{analysis.id}/reports/#{report.id}", report: update_data
+        put "/admin/analyses/#{analysis.id}/reports/#{report.id}", params: { report: update_data }
         expect(response).to be_redirect
       end
     end
@@ -89,7 +89,7 @@ describe "Admin/Report" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/analyses/#{analysis.id}/reports", report: new_report
+        post "/admin/analyses/#{analysis.id}/reports", params: { report: new_report }
         expect(response).to be_redirect
       end
     end
@@ -98,7 +98,7 @@ describe "Admin/Report" do
       it "redirect" do
         report
         update_data = { title: "new_title" }
-        put "/admin/analyses/#{analysis.id}/reports/#{report.id}", report: update_data
+        put "/admin/analyses/#{analysis.id}/reports/#{report.id}", params: { report: update_data }
         expect(response).to be_redirect
       end
     end
@@ -135,7 +135,7 @@ describe "Admin/Report" do
     describe "#create" do
       it "success" do
         expect {
-          post "/admin/analyses/#{analysis.id}/reports", report: new_report
+          post "/admin/analyses/#{analysis.id}/reports", params: { report: new_report }
         }.to change { Report.count }.by(1)
         expect(response).to be_redirect
       end
@@ -145,7 +145,7 @@ describe "Admin/Report" do
       it "success" do
         report
         update_data = { title: "new_title" }
-        put "/admin/analyses/#{analysis.id}/reports/#{report.id}", report: update_data
+        put "/admin/analyses/#{analysis.id}/reports/#{report.id}", params: { report: update_data }
         expect(response).to be_redirect
         report.reload
         expect(report.title).to match(update_data[:title])

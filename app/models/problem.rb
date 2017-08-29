@@ -1,9 +1,9 @@
-class Problem < ActiveRecord::Base
+class Problem < ApplicationRecord
   has_many :votes
-  has_many :users, -> { uniq }, through: :votes
-  has_and_belongs_to_many :analyses, -> { uniq }
+  has_many :users, -> { distinct }, through: :votes
+  has_and_belongs_to_many :analyses, index: { unique: true }
   has_many :reports, through: :analyses
-  has_and_belongs_to_many :solutions, -> { uniq }
+  has_and_belongs_to_many :solutions, index: { unique: true }
   paginates_per 15
 
   scope :hot_order, -> {

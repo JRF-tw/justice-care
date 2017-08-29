@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.2.2
+- 2.3.4
 before_install:
 - sudo apt-get -qq update
 - sudo apt-get install -y libxml2-dev nodejs
@@ -11,8 +11,8 @@ before_script:
 - cp config/database.yml.travis config/database.yml
 - cp config/config.yml.travis config/config.yml
 script:
-- bin/rake db:migrate RAILS_ENV=test
-- bin/rake spec
+- bin/rails db:migrate RAILS_ENV=test
+- bin/rails spec
 notifications:
   slack:
     secure: YxKAPNUpGbi/26tlZ3WqtaVYWaaHPp76Uvz6+Rt2sz3TcK487spZRNFjavELat7W9dmb+HcIJj4tAmfHnZFZD0o0QP3m3nsKYp7WLohrf4B6mcqHs7fnayL3gfneIbj1K1gyMgrNw0kg8L2dESxf7m92GRfi03XnaPYloR5w6i4kLJCQLZkwhz2rYYJh87wfBEPr1ytimQD6Qbub+fQpxFP2R3wZIiT0FzX5PZkoqZbLn2k1c5ZmeYV15XMxrGjhj1exzncVywmdT3dGywd2VU5q0/mhlKRQ8r1i9aDWq6wiTQ6LhWCAZGBDW9dBtGM9JYE5Q31EZb9ouySvBcLsuHi6jFZn3m9Mg8ViNplF01e4GwO2M0XyAy9Ym22vfOy25HRx3mvwsl/57wGGTbOLcaXQC4sAtJuO7/pkiwSO+43a1gPtRTJktV2urfJqSZszZanN0fNwS1nQgzLOr/BXcUv4vuxPuC7TuGJxsA5cHMezfcTvrZbNrpVpUWV4jOoTxqZGK4RfqZs9kIPMS3FPLHqoBErzhupv7oMo3utr1kKSot9AZ3LoJVlTNRY1nAa2XKMftXVbpjjjCjzVreSKSzfPx1jMsx9lP0UMt7+9qA6vAGImRYSGsMAunf/ZFb1lF2fGBwgFrPno+0sRXnklhT81i66SSqtyTIcnyxkH0Xs=

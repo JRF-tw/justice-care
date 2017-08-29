@@ -1,6 +1,6 @@
-class Analysis < ActiveRecord::Base
+class Analysis < ApplicationRecord
   mount_uploader :image, ImageUploader
-  has_and_belongs_to_many :problems, -> { uniq }
+  has_and_belongs_to_many :problems, index: { unique: true }
   has_many :reports
   paginates_per 15
   default_scope { order(no: :asc).order(id: :asc) }
@@ -17,7 +17,7 @@ class Analysis < ActiveRecord::Base
       self.youtube_url = nil
       self.youtube_id = nil
       errors.add(:base, 'youtube網址錯誤')
-      return false
+      throw(:abort)
     end
     if self.youtube_id == youtube_id
       # means that youtube is the same, no need to update.
@@ -43,7 +43,7 @@ class Analysis < ActiveRecord::Base
     else
       self.youtube_url = nil
       errors.add(:base, 'youtube網址錯誤')
-      return false
+      throw(:abort)
     end
   end
 end

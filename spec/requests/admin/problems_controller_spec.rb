@@ -36,7 +36,7 @@ describe "Admin/Problem" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/problems", problem: new_problem
+        post "/admin/problems", params: { problem: new_problem }
         expect(response).to be_redirect
       end
     end
@@ -45,7 +45,7 @@ describe "Admin/Problem" do
       it "redirect" do
         problem
         update_data = { title: "new_title" }
-        put "/admin/problems/#{problem.id}", problem: update_data
+        put "/admin/problems/#{problem.id}", params: { problem: update_data }
         expect(response).to be_redirect
       end
     end
@@ -87,7 +87,7 @@ describe "Admin/Problem" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/problems", problem: new_problem
+        post "/admin/problems", params: { problem: new_problem }
         expect(response).to be_redirect
       end
     end
@@ -96,7 +96,7 @@ describe "Admin/Problem" do
       it "redirect" do
         problem
         update_data = { title: "new_title" }
-        put "/admin/problems/#{problem.id}", problem: update_data
+        put "/admin/problems/#{problem.id}", params: { problem: update_data }
         expect(response).to be_redirect
       end
     end
@@ -139,7 +139,7 @@ describe "Admin/Problem" do
 
     describe "#create" do
       it "success" do
-        post "/admin/problems", problem: new_problem
+        post "/admin/problems", params: { problem: new_problem }
         expect(response).to be_redirect
       end
     end
@@ -148,7 +148,7 @@ describe "Admin/Problem" do
       it "success" do
         problem
         update_data = { title: "new_title" }
-        put "/admin/problems/#{problem.id}", problem: update_data
+        put "/admin/problems/#{problem.id}", params: { problem: update_data }
         expect(response).to be_redirect
       end
     end

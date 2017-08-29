@@ -37,7 +37,7 @@ describe "Admin/Analysis" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/analyses", analysis: new_analysis
+        post "/admin/analyses", params: { analysis: new_analysis }
         expect(response).to be_redirect
       end
     end
@@ -46,7 +46,7 @@ describe "Admin/Analysis" do
       it "redirect" do
         analysis
         update_data = { title: "new_title" }
-        put "/admin/analyses/#{analysis.id}", analysis: update_data
+        put "/admin/analyses/#{analysis.id}", params: { analysis: update_data }
         expect(response).to be_redirect
       end
     end
@@ -88,7 +88,7 @@ describe "Admin/Analysis" do
 
     describe "#create" do
       it "redirect" do
-        post "/admin/analyses", analysis: new_analysis
+        post "/admin/analyses", params: { analysis: new_analysis }
         expect(response).to be_redirect
       end
     end
@@ -97,7 +97,7 @@ describe "Admin/Analysis" do
       it "redirect" do
         analysis
         update_data = { title: "new_title" }
-        put "/admin/analyses/#{analysis.id}", analysis: update_data
+        put "/admin/analyses/#{analysis.id}", params: { analysis: update_data }
         expect(response).to be_redirect
       end
     end
@@ -140,7 +140,7 @@ describe "Admin/Analysis" do
 
     describe "#create" do
       it "success" do
-        post "/admin/analyses", analysis: new_analysis
+        post "/admin/analyses", params: { analysis: new_analysis }
         expect(response).to be_redirect
       end
     end
@@ -149,7 +149,7 @@ describe "Admin/Analysis" do
       it "success" do
         analysis
         update_data = { title: "new_title" }
-        put "/admin/analyses/#{analysis.id}", analysis: update_data
+        put "/admin/analyses/#{analysis.id}", params: { analysis: update_data }
         expect(response).to be_redirect
       end
     end

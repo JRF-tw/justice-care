@@ -74,14 +74,14 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default charset: "utf-8"
   ActionMailer::Base.smtp_settings = {
-    :port           => Setting.smtp_settings.port,
-    :address        => Setting.smtp_settings.address,
-    :domain         => Setting.smtp_settings.domain,
-    :user_name      => Setting.smtp_settings.user_name,
-    :password       => Setting.smtp_settings.password,
-    :authentication => Setting.smtp_settings.authentication
+    port: Setting.smtp_settings.port,
+    address: Setting.smtp_settings.address,
+    domain: Setting.smtp_settings.domain,
+    user_name: Setting.smtp_settings.user_name,
+    password: Setting.smtp_settings.password,
+    authentication: Setting.smtp_settings.authentication
   }
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
@@ -103,6 +103,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => Setting.url.host, :protocol => Setting.url.protocol }
+  config.action_mailer.default_url_options = { host: Setting.url.host, protocol: Setting.url.protocol }
 end
 
