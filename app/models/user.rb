@@ -1,12 +1,22 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :timeoutable
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable,
+         :recoverable, :rememberable, :trackable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   validates_presence_of :email
   has_many :votes
   has_many :problems, -> { distinct }, through: :votes
+
+  # Ransack 2+ still exposes every column by default; restrict the admin user
+  # search to non-sensitive fields so attackers can't probe password/token columns.
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[id name email admin is_legal_profession accept_contact provider created_at updated_at]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    []
+  end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, provider_uid: auth.uid).first

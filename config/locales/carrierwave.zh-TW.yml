@@ -1,0 +1,14 @@
+zh-TW:
+  errors:
+    messages:
+      carrierwave_processing_error: 處理失敗
+      carrierwave_integrity_error: 不是允許的檔案類型
+      carrierwave_download_error: 無法下載
+      extension_whitelist_error: "不允許上傳 %{extension} 檔案，允許的類型：%{allowed_types}"
+      extension_blacklist_error: "不允許上傳 %{extension} 檔案，禁止的類型：%{prohibited_types}"
+      content_type_whitelist_error: "不允許上傳 %{content_type} 檔案，允許的類型：%{allowed_types}"
+      content_type_blacklist_error: "不允許上傳 %{content_type} 檔案"
+      rmagick_processing_error: "RMagick 處理失敗，可能不是有效的圖片？"
+      mini_magick_processing_error: "MiniMagick 處理失敗，可能不是有效的圖片？原始錯誤：%{e}"
+      min_size_error: "檔案大小必須大於 %{min_size}"
+      max_size_error: "檔案大小必須小於 %{max_size}"

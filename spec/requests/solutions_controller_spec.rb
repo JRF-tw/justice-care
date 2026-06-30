@@ -3,7 +3,7 @@ require "spec_helper"
 describe "Solution" do
 
 
-  let(:solution) { FactoryGirl.create(:solution) }
+  let(:solution) { FactoryBot.create(:solution) }
   let(:new_solution) do
     {
       name: "new_solution_name",

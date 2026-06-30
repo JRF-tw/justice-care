@@ -12,9 +12,9 @@
           = link_to '修改密碼', '#edit_pw', class: 'btn btn-log-in pr-3', data: {toggle: 'modal'}
           = link_to '登出', destroy_user_session_path, method: :delete, class: 'btn btn-sign-up'
     p.text-center
-      = link_to image_tag('logo-index.png', class: 'img-responsive center-block'), root_path
+      = link_to image_tag('logo-index.png', alt: '全民司法改革運動', class: 'img-responsive center-block'), root_path
     p.text-center
-      = image_tag('title.png', class: 'img-responsive center-block')
+      = image_tag('title.png', alt: '全民司法改革運動 — 跟我們一起做司法改革', class: 'img-responsive center-block')
     .row.text-center
       - if params[:action] == 'step1'
         = link_to step1_path, class: 'btn btn-step active pr-5' do

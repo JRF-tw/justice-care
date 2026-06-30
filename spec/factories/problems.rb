@@ -1,10 +1,10 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :problem do
     sequence(:title)  { |n| "Problem title #{n}" }
     sequence(:content)  { |n| "Problem content #{n}" }
-    discourse_url ""
-    add 0
-    total_votes_cache 0
-    recently_votes_cache 0
+    discourse_url { "" }
+    add { 0 }
+    total_votes_cache { 0 }
+    recently_votes_cache { 0 }
   end
 end

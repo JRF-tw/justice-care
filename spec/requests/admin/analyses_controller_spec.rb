@@ -2,9 +2,9 @@ require "rails_helper"
 
 describe "Admin/Analysis" do
 
-  let(:user) { FactoryGirl.create(:user) }
-  let(:admin) { FactoryGirl.create(:admin) }
-  let(:analysis) { FactoryGirl.create(:analysis) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:admin) { FactoryBot.create(:admin) }
+  let(:analysis) { FactoryBot.create(:analysis) }
   let(:new_analysis) do
     {
       title: "new_analysis_title",

@@ -1,20 +1,15 @@
 doctype html
 html lang="zh-Hant-TW" 
   head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
     meta charset="utf-8" /
-    meta content="IE=edge" http-equiv="X-UA-Compatible"
     meta content="width=device-width, initial-scale=1" name="viewport"
     meta name="google-site-verification" content="dSbDkPu-r2DhrapQYIt8kHyn3KD38iuTyTm8WQbb8VI"
     link href="#{image_path('logo.png')}" rel="shortcut icon"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = display_meta_tags(default_meta_tags)
-    /! HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    /! WARNING: Respond.js doesn't work if you view the page via file://
-    /![if lt IE 9]
-      script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"
-      script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
+    = site_structured_data_tags
+    = yield :structured_data
   body
     /! 內容
     /! 佈告欄

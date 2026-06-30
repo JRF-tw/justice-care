@@ -33,7 +33,7 @@ class ProblemsController < ApplicationController
 
   def unvote
     if current_user
-      vote = Vote.where("problem_id = #{@problem.id}").where("user_id = #{current_user.id}").first
+      vote = Vote.where(problem_id: @problem.id, user_id: current_user.id).first
       if vote.present?
         vote.destroy
         @problem.reload

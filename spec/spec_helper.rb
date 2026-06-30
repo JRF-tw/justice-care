@@ -48,7 +48,7 @@ RSpec.configure do |config|
 
   config.fixture_path = "#{Rails.root}/spec/fixtures"
   config.include Capybara::DSL, type: :request
-  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.infer_spec_type_from_file_location!
 
   # rspec-mocks config goes here. You can use an alternate test double
