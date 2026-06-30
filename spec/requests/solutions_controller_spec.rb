@@ -16,4 +16,11 @@ describe "Solution" do
       expect(response).to be_success
     end
   end
+
+  describe "SEO metadata" do
+    it "emits Article JSON-LD" do
+      get "/solutions/#{solution.id}"
+      expect(response.body).to include('"@type":"Article"')
+    end
+  end
 end

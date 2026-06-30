@@ -24,4 +24,14 @@ describe "Analysis" do
       expect(response).to be_success
     end
   end
+
+  describe "SEO metadata" do
+    it "emits Article JSON-LD and an og:image for the analysis" do
+      get "/analyses/#{analysis.id}"
+      expect(response.body).to include('"@type":"Article"')
+      expect(response.body).to include('property="og:image"')
+      # og:image should point at the analysis's own uploaded image, not the default.
+      expect(response.body).to include("/uploads/")
+    end
+  end
 end
