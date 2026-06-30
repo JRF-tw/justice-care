@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Problems" do
-  let(:problem) { FactoryGirl.create(:problem) }
-  let(:user) { FactoryGirl.create(:user) }
+  let(:problem) { FactoryBot.create(:problem) }
+  let(:user) { FactoryBot.create(:user) }
 
   describe "after login user" do
     before { sign_in(user) }
@@ -25,7 +25,7 @@ describe "Problems" do
     describe "#unvote" do
       it "#success" do
         problem
-        FactoryGirl.create(:vote, user: user, problem: problem)
+        FactoryBot.create(:vote, user: user, problem: problem)
         problem.reload
         expect(problem.votes.count).to eq(1)
         vote_data = {

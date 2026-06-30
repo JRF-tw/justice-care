@@ -2,9 +2,9 @@ require "rails_helper"
 
 describe "Admin/Solution" do
 
-  let(:user) { FactoryGirl.create(:user) }
-  let(:admin) { FactoryGirl.create(:admin) }
-  let(:solution) { FactoryGirl.create(:solution) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:admin) { FactoryBot.create(:admin) }
+  let(:solution) { FactoryBot.create(:solution) }
   let(:new_solution) do
     {
       title: "new_solution_title",

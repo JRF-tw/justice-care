@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # SEO: dynamic sitemap + robots (built from the DB, host-aware)
+  get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }, as: :sitemap
+  get '/robots.txt'  => 'sitemaps#robots'
+
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,11 +1,11 @@
 require "rails_helper"
 
 describe Vote do
-  let(:vote) {FactoryGirl.create(:vote)}
+  let(:vote) {FactoryBot.create(:vote)}
 
   it "#factory_creat_success" do
     expect {
-      FactoryGirl.create :vote
+      FactoryBot.create :vote
     }.to change { Vote.count }.by(1)
   end
 end

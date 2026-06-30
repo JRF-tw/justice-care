@@ -2,10 +2,10 @@ require "rails_helper"
 
 describe "Admin/Report" do
 
-  let(:user) { FactoryGirl.create(:user) }
-  let(:admin) { FactoryGirl.create(:admin) }
-  let(:analysis) { FactoryGirl.create(:analysis) }
-  let(:report) { FactoryGirl.create(:report) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:admin) { FactoryBot.create(:admin) }
+  let(:analysis) { FactoryBot.create(:analysis) }
+  let(:report) { FactoryBot.create(:report) }
   let(:new_report) do
     {
       title: "new_report_title",

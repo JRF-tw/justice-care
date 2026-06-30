@@ -28,4 +28,13 @@ describe "Static pages" do
       expect(response).to be_success
     end
   end
+
+  describe "structured data" do
+    it "embeds Organization and WebSite JSON-LD" do
+      get "/"
+      expect(response.body).to include('application/ld+json')
+      expect(response.body).to include('"@type":"Organization"')
+      expect(response.body).to include('"@type":"WebSite"')
+    end
+  end
 end

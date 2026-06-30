@@ -2,9 +2,9 @@ require "rails_helper"
 
 describe "Admin/Problem" do
 
-  let(:user) { FactoryGirl.create(:user) }
-  let(:admin) { FactoryGirl.create(:admin) }
-  let(:problem) { FactoryGirl.create(:problem) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:admin) { FactoryBot.create(:admin) }
+  let(:problem) { FactoryBot.create(:problem) }
   let(:new_problem) do
     {
       title: "new_problem_title",

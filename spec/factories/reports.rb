@@ -1,10 +1,10 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :report do
-    analysis {FactoryGirl.create(:analysis)}
+    analysis { FactoryBot.create(:analysis) }
     sequence(:title)  { |n| "Report title #{n}" }
     sequence(:content)  { |n| "Report content #{n}" }
     sequence(:no) { |n| n }
-    discourse_url ""
-    mindmap_url ""
+    discourse_url { "" }
+    mindmap_url { "" }
   end
 end

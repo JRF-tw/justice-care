@@ -1,8 +1,8 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :solution do
     sequence(:title)  { |n| "Solution title #{n}" }
     sequence(:content)  { |n| "Solution content #{n}" }
-    discourse_url ""
+    discourse_url { "" }
     sequence(:no) { |n| n }
   end
 end

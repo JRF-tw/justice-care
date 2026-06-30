@@ -45,6 +45,11 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
     RedactorRails.image_file_types
   end
 
+  # Also verify the MIME type so a non-image renamed with an image extension is rejected.
+  def content_type_whitelist
+    [/image\//]
+  end
+
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename

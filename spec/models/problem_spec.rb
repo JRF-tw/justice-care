@@ -1,20 +1,20 @@
 require "rails_helper"
 
 describe Problem do
-  let(:problem) {FactoryGirl.create(:problem)}
+  let(:problem) {FactoryBot.create(:problem)}
 
   it "#factory_creat_success" do
     expect {
-      FactoryGirl.create :problem
+      FactoryBot.create :problem
     }.to change { Problem.count }.by(1)
   end
 
   it "#vote_count" do
     problem.add = 3
     problem.save
-    vote1 = FactoryGirl.create(:vote, problem: problem, created_at: 1.day.ago)
-    vote2 = FactoryGirl.create(:vote, problem: problem, created_at: 2.days.ago)
-    vote3 = FactoryGirl.create(:vote, problem: problem, created_at: 3.weeks.ago)
+    vote1 = FactoryBot.create(:vote, problem: problem, created_at: 1.day.ago)
+    vote2 = FactoryBot.create(:vote, problem: problem, created_at: 2.days.ago)
+    vote3 = FactoryBot.create(:vote, problem: problem, created_at: 3.weeks.ago)
     problem.sync_votes_count
     expect(problem.count_total_votes).to eq(6)
     expect(problem.total_votes_cache).to eq(6)
@@ -23,23 +23,23 @@ describe Problem do
   end
 
   it "#order success" do
-    problem1 = FactoryGirl.create(:problem, created_at: 3.day.ago)
-    problem2 = FactoryGirl.create(:problem, created_at: 1.day.ago)
-    problem3 = FactoryGirl.create(:problem, created_at: 2.day.ago)
+    problem1 = FactoryBot.create(:problem, created_at: 3.day.ago)
+    problem2 = FactoryBot.create(:problem, created_at: 1.day.ago)
+    problem3 = FactoryBot.create(:problem, created_at: 2.day.ago)
     2.times {
-      FactoryGirl.create(:vote, problem: problem1)
+      FactoryBot.create(:vote, problem: problem1)
     }
     4.times {
-      FactoryGirl.create(:vote, problem: problem1, created_at: 3.weeks.ago)
+      FactoryBot.create(:vote, problem: problem1, created_at: 3.weeks.ago)
     }
     3.times {
-      FactoryGirl.create(:vote, problem: problem2)
+      FactoryBot.create(:vote, problem: problem2)
     }
     4.times {
-      FactoryGirl.create(:vote, problem: problem3)
+      FactoryBot.create(:vote, problem: problem3)
     }
     1.times {
-      FactoryGirl.create(:vote, problem: problem3, created_at: 3.weeks.ago)
+      FactoryBot.create(:vote, problem: problem3, created_at: 3.weeks.ago)
     }
     problem1.sync_votes_count
     problem1.reload
