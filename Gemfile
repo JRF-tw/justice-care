@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.4.4'
+ruby '3.4.12'
 
 gem "bundler", ">= 1.8.4"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
