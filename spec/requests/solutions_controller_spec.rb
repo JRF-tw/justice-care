@@ -13,7 +13,7 @@ describe "Solution" do
   describe "#show" do
     it "success" do
       get "/solutions/#{solution.id}"
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 

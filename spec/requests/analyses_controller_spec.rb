@@ -13,7 +13,7 @@ describe "Analysis" do
   describe "#show" do
     it "success" do
       get "/analyses/#{analysis.id}"
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -21,7 +21,7 @@ describe "Analysis" do
     it "success" do
       2.times { FactoryBot.create(:report, analysis: analysis) }
       get "/analyses/#{analysis.id}"
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 

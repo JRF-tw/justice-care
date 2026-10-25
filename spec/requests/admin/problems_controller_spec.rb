@@ -119,21 +119,21 @@ describe "Admin/Problem" do
     describe "#index" do
       it "success" do
         get "/admin/problems/"
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
     describe "#new" do
       it "success" do
         get "/admin/problems/new"
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
     describe "#edit" do
       it "success" do
         get "/admin/problems/#{problem.id}/edit"
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 

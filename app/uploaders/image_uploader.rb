@@ -38,11 +38,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Restrict uploads to safe image types by both extension and MIME content type,
   # so a renamed script/HTML file can't be stored and served from public/uploads.
-  def extension_white_list
+  def extension_allowlist
     %w(jpg jpeg gif png webp)
   end
 
-  def content_type_whitelist
+  def content_type_allowlist
     [/image\//]
   end
 

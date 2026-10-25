@@ -41,12 +41,12 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  def extension_white_list
+  def extension_allowlist
     RedactorRails.image_file_types
   end
 
   # Also verify the MIME type so a non-image renamed with an image extension is rejected.
-  def content_type_whitelist
+  def content_type_allowlist
     [/image\//]
   end
 
