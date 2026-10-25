@@ -51,7 +51,7 @@ describe "Admin/User" do
     describe "#index" do
       it "success" do
         get "/admin/users/"
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 

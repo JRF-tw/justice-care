@@ -14,7 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require twitter/bootstrap
+//= require bootstrap3/bootstrap
 
 var ready_ran = 0;
 

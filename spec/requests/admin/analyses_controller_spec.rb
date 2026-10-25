@@ -120,21 +120,21 @@ describe "Admin/Analysis" do
     describe "#index" do
       it "success" do
         get "/admin/analyses/"
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
     describe "#new" do
       it "success" do
         get "/admin/analyses/new"
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 
     describe "#edit" do
       it "success" do
         get "/admin/analyses/#{analysis.id}/edit"
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
 

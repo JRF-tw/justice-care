@@ -1,6 +1,6 @@
 /*
-  =require twitter-bootstrap-static/bootstrap
+  =require bootstrap3/bootstrap
 
   Use Font Awesome icons (default)
-  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  Bootstrap 3.4.1 is vendored at vendor/assets/stylesheets/bootstrap3/bootstrap.css
   */
