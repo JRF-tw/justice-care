@@ -8,8 +8,6 @@ gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 # Psych 4+ disables YAML aliases by default, which breaks settingslogic's
 # config.yml (it uses `&defaults`/`*defaults`). Rails 5.2 targets psych 3.x anyway.
 gem 'psych', '~> 3.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,10 +23,6 @@ gem 'jquery-rails', '>= 4.4.0'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-# Kept at 0.4.x: newer sdoc needs rdoc 6+, which requires psych 4+ (see psych pin above).
-# sdoc/rdoc are doc-generation only (:doc group, never loaded at runtime).
-gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'jquery-turbolinks'
 gem 'omniauth-facebook'
@@ -50,7 +44,7 @@ gem 'ransack'
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
 gem 'redactor-rails', git: 'https://github.com/billy3321/redactor-rails.git'
-gem "carrierwave", '~> 1.3'
+gem "carrierwave", '~> 2.2', '>= 2.2.7'
 gem "mini_magick"
 # gem 'lograge'
 gem "rails-i18n", '~> 5.1'
